@@ -260,6 +260,9 @@ void DemoRun()
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
 			break;
+		case '9':
+			PrintXCoord(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
+			break;
 		case 'q':
 			break;
 		case 'r':
@@ -652,4 +655,29 @@ void DemoISR(void *callBackRef, void *pVideo)
 	*data = 1; //set fRefresh to 1
 }
 
+void PrintXCoord(u8 *frame, u32 width, u32 height, u32 stride) {
+	u32 xcoi, ycoi;
+	u32 iPixelAddr;
+	u8 redVal, greenVal, blueVal;
+	for(xcoi = 0; xcoi < (width*3); xcoi+=3) {
+		iPixelAddr = xcoi;
 
+		for(ycoi = 0; ycoi < height; ycoi++)
+		{
+			redVal = frame[iPixelAddr];
+			blueVal = frame[iPixelAddr + 1];
+			greenVal = frame[iPixelAddr + 2];
+
+			if (redVal > 200 && greenVal < 50 && blueVal < 50) {
+				xil_printf("\n\rX-coordinate of red pixel: %d\n\r", (int) xcoi / 3);
+				return;
+			}
+
+			/*
+			 * This pattern is printed one vertical line at a time, so the address must be incremented
+			 * by the stride instead of just 1.
+			 */
+			iPixelAddr += stride;
+		}
+	}
+}
