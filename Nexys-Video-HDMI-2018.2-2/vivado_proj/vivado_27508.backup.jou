@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Mar 10 17:24:41 2025
+# Process ID: 27508
+# Current directory: C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8360 C:\Users\lny\Downloads\Nexys-Video-HDMI-2018.2-2\vivado_proj\Nexys-Video-HDMI.xpr
+# Log file: C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/vivado.log
+# Journal file: C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.xpr
+report_ip_status -name ip_status 
+update_compile_order -fileset sources_1
+upgrade_ip [get_ips  {hdmi_rst_mig_7series_0_pxl_0 hdmi_axi_timer_0_0 hdmi_v_axi4s_vid_out_0_0 hdmi_dvi2rgb_0_0 hdmi_axi_gpio_video_0 hdmi_v_tc_0_0 hdmi_xlconstant_0_0 hdmi_axi_mem_intercon_0 hdmi_mdm_1_0 hdmi_lmb_bram_0 hdmi_axi_vdma_0_0 hdmi_microblaze_0_axi_periph_0 hdmi_microblaze_0_axi_intc_0 hdmi_v_vid_in_axi4s_0_0 hdmi_rst_mig_7series_0_100M_0 hdmi_axi_uartlite_0_0 hdmi_v_tc_1_0 hdmi_microblaze_0_0 hdmi_mig_7series_0_0}] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips {hdmi_rst_mig_7series_0_pxl_0 hdmi_axi_timer_0_0 hdmi_v_axi4s_vid_out_0_0 hdmi_dvi2rgb_0_0 hdmi_axi_gpio_video_0 hdmi_v_tc_0_0 hdmi_xlconstant_0_0 hdmi_axi_mem_intercon_0 hdmi_mdm_1_0 hdmi_lmb_bram_0 hdmi_axi_vdma_0_0 hdmi_microblaze_0_axi_periph_0 hdmi_microblaze_0_axi_intc_0 hdmi_v_vid_in_axi4s_0_0 hdmi_rst_mig_7series_0_100M_0 hdmi_axi_uartlite_0_0 hdmi_v_tc_1_0 hdmi_microblaze_0_0 hdmi_mig_7series_0_0}] -no_script -sync -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 11
+wait_on_run impl_1
+open_run impl_1
+file mkdir C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk
+file copy -force C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.runs/impl_1/hdmi_wrapper.sysdef C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper.hdf
+
+launch_sdk -workspace C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk -hwspec C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper.hdf

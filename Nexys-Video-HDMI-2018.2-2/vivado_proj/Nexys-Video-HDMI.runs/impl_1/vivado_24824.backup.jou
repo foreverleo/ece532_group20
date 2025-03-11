@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Mar 10 17:35:00 2025
+# Process ID: 24824
+# Current directory: C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.runs/impl_1
+# Command line: vivado.exe -log hdmi_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hdmi_wrapper.tcl -notrace
+# Log file: C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.runs/impl_1/hdmi_wrapper.vdi
+# Journal file: C:/Users/lny/Downloads/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source hdmi_wrapper.tcl -notrace

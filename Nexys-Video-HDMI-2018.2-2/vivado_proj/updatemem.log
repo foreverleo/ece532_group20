@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# updatemem v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Tue Mar 11 06:58:11 2025
+# Process ID: 27384
+# Current directory: C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj
+# Command line: updatemem.exe -mode batch -source C:/Xilinx/SDK/2018.3/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/hdmi_wrapper.mmi -data C:/Xilinx/SDK/2018.3/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc hdmi_i/microblaze_0 -bit C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/hdmi_wrapper.bit -out C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/download.bit -force
+# Log file: C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj/updatemem.log
+# Journal file: C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj\updatemem.jou
+#-----------------------------------------------------------
+source C:/Xilinx/SDK/2018.3/scripts/updatemem/main.tcl -notrace
+ Loading bitfile C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/hdmi_wrapper.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream C:/Users/Raymond/Downloads/Nexys-Video-HDMI-2018.2-xy/Nexys-Video-HDMI-2018.2-2/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/download.bit...
+  update_mem: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 550.055 ; gain = 487.188
+INFO: [Common 17-206] Exiting updatemem at Tue Mar 11 06:58:36 2025...
