@@ -680,4 +680,6 @@ void PrintXCoord(u8 *frame, u32 width, u32 height, u32 stride) {
 			iPixelAddr += stride;
 		}
 	}
+	xil_printf("\n\rNo red pixel found!\n\r");
+	return;
 }
