@@ -88,17 +88,32 @@ void PrintXCoord(u8 *frame, u32 width, u32 height, u32 stride) {
 	u32 xcoi, ycoi;
 	u32 iPixelAddr;
 	u8 redVal, greenVal, blueVal;
+	int xcoord, region;
 	for(xcoi = 0; xcoi < (width*3); xcoi+=3) {
 		iPixelAddr = xcoi;
 
 		for(ycoi = 0; ycoi < height; ycoi++)
 		{
-			redVal = frame[iPixelAddr];
-			blueVal = frame[iPixelAddr + 1];
-			greenVal = frame[iPixelAddr + 2];
+			greenVal = frame[iPixelAddr]; // Green
+			blueVal = frame[iPixelAddr + 1]; // Blue
+			redVal = frame[iPixelAddr + 2]; // red
 
-			if (redVal > 200 && greenVal < 50 && blueVal < 50) {
-				xil_printf("\n\rX-coordinate of red pixel: %d\n\r", (int) xcoi / 3);
+			if (redVal > 150 && greenVal < 100 && blueVal < 100) {
+				xcoord = xcoi / 3;
+				if (xcoord < 1280 / 2) {
+					if (xcoord < 1280 / 4) {
+						region = 1;
+					} else {
+						region = 2;
+					}
+				} else {
+					if (xcoord < 1280 * 3 / 4) {
+						region = 3;
+					} else {
+						region = 4;
+					}
+				}
+				xil_printf("\n\rX-coordinate of red pixel: %d. Region: %d.\n\r", xcoord, region);
 				return;
 			}
 
@@ -137,7 +152,8 @@ void DemoInitialize()
 	 */
 	for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
 	{
-		pFrames[i] = frameBuf[i];
+		//pFrames[i] = frameBuf[i];
+		pFrames[i] = (u8 *)(0x90000000 + i * 0x1000000);
 	}
 
 	/*
