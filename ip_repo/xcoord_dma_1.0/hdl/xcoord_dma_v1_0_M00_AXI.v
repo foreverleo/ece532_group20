@@ -192,14 +192,8 @@
 	reg [C_M_AXI_ADDR_WIDTH-1 : 0] 	axi_araddr;
 	reg  	axi_arvalid;
 	reg  	axi_rready;
-	//write beat count in a burst
-	reg [C_TRANSACTIONS_NUM : 0] 	write_index;
-	//read beat count in a burst
-	reg [C_TRANSACTIONS_NUM : 0] 	read_index;
 	//size of C_M_AXI_BURST_LEN length burst in bytes
 	wire [C_TRANSACTIONS_NUM+2 : 0] 	burst_size_bytes;
-	//The burst counters are used to track the number of burst transfers of C_M_AXI_BURST_LEN burst length needed to transfer 2^C_MASTER_LENGTH bytes of data.
-	reg [C_NO_BURSTS_REQ : 0] 	read_burst_counter;
 	reg  	start_single_burst_read;
 	reg  	reads_done;
 	reg  	error_reg;
@@ -354,23 +348,6 @@
 	  assign rnext = M_AXI_RVALID && axi_rready;
 
 
-	// Burst length counter. Uses extra counter register bit to indicate
-	// terminal count to reduce decode logic
-	  always @(posedge M_AXI_ACLK)
-	  begin
-	    if (!M_AXI_ARESETN || start || start_single_burst_read)
-	      begin
-	        read_index <= 0;
-	      end
-	    else if (rnext && (read_index != C_M_AXI_BURST_LEN-1))
-	      begin
-	        read_index <= read_index + 1;
-	      end
-	    else
-	      read_index <= read_index;
-	  end
-
-
 	/*
 	 The Read Data channel returns the results of the read request
 
@@ -425,29 +402,6 @@
 	      end
 	    else
 	      error_reg <= error_reg;
-	  end
-
-
-	//--------------------------------
-	//Example design throttling
-	//--------------------------------
-
-	  always @(posedge M_AXI_ACLK)
-	  begin
-	    if (!M_AXI_ARESETN || start)
-	      begin
-	        read_burst_counter <= 'b0;
-	      end
-	    else if (M_AXI_ARREADY && axi_arvalid)
-	      begin
-	        if (read_burst_counter[C_NO_BURSTS_REQ] == 1'b0)
-	          begin
-	            read_burst_counter <= read_burst_counter + 1'b1;
-	            //read_burst_counter[C_NO_BURSTS_REQ] <= 1'b1;
-	          end
-	      end
-	    else
-	      read_burst_counter <= read_burst_counter;
 	  end
 
 
@@ -554,9 +508,7 @@
 	  begin
 	    if (!M_AXI_ARESETN || start)
 	      reads_done <= 1'b0;
-
-	    //The reads_done should be associated with a rready response
-	    else if (M_AXI_RVALID && axi_rready && (read_index == C_M_AXI_BURST_LEN-1) && (read_burst_counter[C_NO_BURSTS_REQ]))
+	    else if (M_AXI_RVALID && axi_rready && M_AXI_RLAST) // Todo
 	      reads_done <= 1'b1;
 	    else
 	      reads_done <= reads_done;
