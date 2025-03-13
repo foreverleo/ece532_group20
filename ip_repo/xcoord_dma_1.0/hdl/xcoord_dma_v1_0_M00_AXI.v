@@ -36,9 +36,7 @@
 		// Do not modify the ports beyond this line
 
 		// Initiate AXI transactions
-		input wire  INIT_AXI_TXN,
-		// Asserts when transaction is complete
-		output wire  TXN_DONE,
+		input wire  start,
 		// Global Clock Signal.
 		input wire  M_AXI_ACLK,
 		// Global Reset Singal. This Signal is Active Low
@@ -196,7 +194,6 @@
 	//AXI4 internal temp signals
 	reg  	axi_awvalid;
 	reg  	axi_wvalid;
-	reg  	axi_bready;
 	reg [C_M_AXI_ADDR_WIDTH-1 : 0] 	axi_araddr;
 	reg  	axi_arvalid;
 	reg  	axi_rready;
@@ -216,10 +213,7 @@
 	wire  	write_resp_error;
 	wire  	read_resp_error;
 	wire  	rnext;
-	reg  	init_txn_ff;
-	reg  	init_txn_ff2;
-	reg  	init_txn_edge;
-	wire  	init_txn_pulse;
+	wire  	start;
 
 	// I/O Connections assignments
 
@@ -248,7 +242,7 @@
 	assign M_AXI_WUSER	= 'b0;
 	assign M_AXI_WVALID	= axi_wvalid;
 	//Write Response (B)
-	assign M_AXI_BREADY	= axi_bready;
+	assign M_AXI_BREADY	= ; // Todo: write_initiated
 
 	//Read Address (AR)
 	assign M_AXI_ARID	= 'b0;
@@ -270,100 +264,42 @@
 	assign M_AXI_RREADY	= axi_rready;
 	//Burst size in bytes
 	assign burst_size_bytes	= C_M_AXI_BURST_LEN * C_M_AXI_DATA_WIDTH/8;
-	assign init_txn_pulse	= (!init_txn_ff2) && init_txn_ff;
-
-
-	//Generate a pulse to initiate AXI transaction.
-	always @(posedge M_AXI_ACLK)
-	  begin
-	    // Initiates AXI transaction delay
-	    if (M_AXI_ARESETN == 0 )
-	      begin
-	        init_txn_ff <= 1'b0;
-	        init_txn_ff2 <= 1'b0;
-	      end
-	    else
-	      begin
-	        init_txn_ff <= INIT_AXI_TXN;
-	        init_txn_ff2 <= init_txn_ff;
-	      end
-	  end
 
 
 	//--------------------
 	//Write Address Channel
 	//--------------------
 
-	// The purpose of the write address channel is to request the address and
-	// command information for the entire transaction.  It is a single beat
-	// of information.
-
-	// The AXI4 Write address channel in this example will continue to initiate
-	// write commands as fast as it is allowed by the slave/interconnect.
-	// The address will be incremented on each accepted address transaction,
-	// by burst_size_byte to point to the next address.
-
 	  always @(posedge M_AXI_ACLK)
 	  begin
-
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 )
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        axi_awvalid <= 1'b0;
 	      end
-	    // If previously not valid , start next transaction
-	    else if (~axi_awvalid &&) // Todo
+	    else if (/*Todo: Init write*/)
 	      begin
 	        axi_awvalid <= 1'b1;
 	      end
-	    /* Once asserted, VALIDs cannot be deasserted, so axi_awvalid
-	    must wait until transaction is accepted */
 	    else if (M_AXI_AWREADY && axi_awvalid)
 	      begin
 	        axi_awvalid <= 1'b0;
 	      end
-	    else
-	      axi_awvalid <= axi_awvalid;
 	    end
 
 	//--------------------
 	//Write Data Channel
 	//--------------------
 
-	//The write data will continually try to push write data across the interface.
-
-	//The amount of data accepted will depend on the AXI slave and the AXI
-	//Interconnect settings, such as if there are FIFOs enabled in interconnect.
-
-	//Note that there is no explicit timing relationship to the write address channel.
-	//The write channel has its own throttling flag, separate from the AW channel.
-
-	//Synchronization between the channels must be determined by the user.
-
-	//The simpliest but lowest performance would be to only issue one address write
-	//and write data burst at a time.
-
-	//In this example they are kept in sync by using the same address increment
-	//and burst sizes. Then the AW and W channels have their transactions measured
-	//with threshold counters as part of the user logic, to make sure neither
-	//channel gets too far ahead of each other.
-
-	// WVALID logic, similar to the axi_awvalid always block above
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 )
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        axi_wvalid <= 1'b0;
 	      end
-	    // If previously not valid, start next transaction
-	    else if (~axi_wvalid &&) // Todo
+	    else if (/*Todo: Init write*/)
 	      begin
 	        axi_wvalid <= 1'b1;
 	      end
-	    /* If WREADY and too many writes, throttle WVALID
-	    Once asserted, VALIDs cannot be deasserted, so WVALID
-	    must wait until burst is complete with WLAST */
-	    else if () // Todo
-	      axi_wvalid <= 1'b0;
 	    else
 	      axi_wvalid <= axi_wvalid;
 	  end
@@ -372,44 +308,6 @@
 	//Write Response (B) Channel
 	//----------------------------
 
-	//The write response channel provides feedback that the write has committed
-	//to memory. BREADY will occur when all of the data and the write address
-	//has arrived and been accepted by the slave.
-
-	//The write issuance (number of outstanding write addresses) is started by
-	//the Address Write transfer, and is completed by a BREADY/BRESP.
-
-	//While negating BREADY will eventually throttle the AWREADY signal,
-	//it is best not to throttle the whole data channel this way.
-
-	//The BRESP bit [1] is used indicate any errors from the interconnect or
-	//slave for the entire write burst. This example will capture the error
-	//into the ERROR output.
-
-	  always @(posedge M_AXI_ACLK)
-	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 )
-	      begin
-	        axi_bready <= 1'b0;
-	      end
-	    // accept/acknowledge bresp with axi_bready by the master
-	    // when M_AXI_BVALID is asserted by slave
-	    else if (M_AXI_BVALID && ~axi_bready)
-	      begin
-	        axi_bready <= 1'b1;
-	      end
-	    // deassert after one clock cycle
-	    else if (axi_bready)
-	      begin
-	        axi_bready <= 1'b0;
-	      end
-	    // retain the previous value
-	    else
-	      axi_bready <= axi_bready;
-	  end
-
-
-	//Flag any write response errors
 	  assign write_resp_error = axi_bready & M_AXI_BVALID & M_AXI_BRESP[1];
 
 
@@ -417,16 +315,9 @@
 	//Read Address Channel
 	//----------------------------
 
-	//The Read Address Channel (AW) provides a similar function to the
-	//Write Address channel- to provide the tranfer qualifiers for the burst.
-
-	//In this example, the read address increments in the same
-	//manner as the write address channel.
-
 	  always @(posedge M_AXI_ACLK)
 	  begin
-
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 )
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        axi_arvalid <= 1'b0;
 	      end
@@ -447,7 +338,7 @@
 	// Next address after ARREADY indicates previous address acceptance
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        axi_araddr <= 'b0;
 	      end
@@ -472,7 +363,7 @@
 	// terminal count to reduce decode logic
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 || start_single_burst_read)
+	    if (!M_AXI_ARESETN || start || start_single_burst_read)
 	      begin
 	        read_index <= 0;
 	      end
@@ -493,7 +384,7 @@
 	 */
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 )
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        axi_rready <= 1'b0;
 	      end
@@ -529,7 +420,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        error_reg <= 1'b0;
 	      end
@@ -546,31 +437,9 @@
 	//Example design throttling
 	//--------------------------------
 
-	// For maximum port throughput, this user example code will try to allow
-	// each channel to run as independently and as quickly as possible.
-
-	// However, there are times when the flow of data needs to be throtted by
-	// the user application. This example application requires that data is
-	// not read before it is written and that the write channels do not
-	// advance beyond an arbitrary threshold (say to prevent an
-	// overrun of the current read address by the write address).
-
-	// From AXI4 Specification, 13.13.1: "If a master requires ordering between
-	// read and write transactions, it must ensure that a response is received
-	// for the previous transaction before issuing the next transaction."
-
-	// This example accomplishes this user application throttling through:
-	// -Reads wait for writes to fully complete
-	// -Address writes wait when not read + issued transaction counts pass
-	// a parameterized threshold
-	// -Writes wait when a not read + active data burst count pass
-	// a parameterized threshold
-
-	 // read_burst_counter counter keeps track with the number of burst transaction initiated
-	 // against the number of burst transactions the master needs to initiate
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (!M_AXI_ARESETN || start)
 	      begin
 	        read_burst_counter <= 'b0;
 	      end
@@ -591,7 +460,7 @@
 
 	  always @ ( posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 1'b0 )
+	    if (!M_AXI_ARESETN)
 	      begin
 	        // reset condition
 	        // All the signals are assigned default values under reset condition
@@ -607,7 +476,7 @@
 	          IDLE:
 	            // This state is responsible to wait for user defined C_M_START_COUNT
 	            // number of clock cycles.
-	            if ( init_txn_pulse == 1'b1)
+	            if (start)
 	              begin
 	                mst_exec_state  <= INIT_READ;
 	              end
@@ -711,7 +580,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (!M_AXI_ARESETN || start)
 	      reads_done <= 1'b0;
 
 	    //The reads_done should be associated with a rready response
