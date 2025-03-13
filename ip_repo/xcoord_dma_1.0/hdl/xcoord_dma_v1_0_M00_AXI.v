@@ -195,7 +195,6 @@
 	//size of C_M_AXI_BURST_LEN length burst in bytes
 	wire [C_TRANSACTIONS_NUM+2 : 0] 	burst_size_bytes;
 	reg  	start_single_burst_read;
-	reg  	reads_done;
 	reg  	error_reg;
 	reg  	burst_read_active;
 	//Interface response error flags
@@ -433,7 +432,7 @@
 	              end
 
 	          INIT_READ:
-	            if (reads_done)
+	            if (M_AXI_RVALID && axi_rready && M_AXI_RLAST)
 	              begin
 	                mst_exec_state <= IDLE;
 	              end
@@ -497,22 +496,6 @@
         burst_cnt <= 8'b0;
       end
     end
-
-	 // Check for last read completion.
-
-	 // This logic is to qualify the last read count with the final read
-	 // response. This demonstrates how to confirm that a read has been
-	 // committed.
-
-	  always @(posedge M_AXI_ACLK)
-	  begin
-	    if (!M_AXI_ARESETN || start)
-	      reads_done <= 1'b0;
-	    else if (M_AXI_RVALID && axi_rready && M_AXI_RLAST) // Todo
-	      reads_done <= 1'b1;
-	    else
-	      reads_done <= reads_done;
-	    end
 
 	// Add user logic here
 
