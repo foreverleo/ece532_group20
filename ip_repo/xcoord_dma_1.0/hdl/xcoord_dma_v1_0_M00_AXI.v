@@ -461,11 +461,9 @@
     reg [1:0] rgb_offset;
     reg [7:0] burst_cnt;
 
-    always @(*) begin
-      if (M_AXI_RDATA[rgb_offset*8 +: 8] > 8'd150 && M_AXI_RDATA[(rgb_offset+1)*8 +: 8] < 8'd100 && M_AXI_RDATA[(reb_offset+2)*8 +: 8] < 8'd100) begin
-        // Todo: Xcoord found
-      end
-    end
+    wire red_pixel_found;
+    assign red_pixel_found = M_AXI_RDATA[rgb_offset*8 +: 8] > 8'd150 && M_AXI_RDATA[(rgb_offset+1)*8 +: 8] < 8'd100 && M_AXI_RDATA[(reb_offset+2)*8 +: 8] < 8'd100;
+
 
     // Todo
     always @(posedge M_AXI_ACLK) begin
