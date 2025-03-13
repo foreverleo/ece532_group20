@@ -9,7 +9,7 @@
 		// Do not modify the parameters beyond this line
 
 		// Base address of targeted slave
-		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,
+		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000, // TODO
 		// Burst Length. Supports 1, 2, 4, 8, 16, 32, 64, 128, 256 burst lengths
 		parameter integer C_M_AXI_BURST_LEN	= 256,
 		// Thread ID Width
@@ -31,12 +31,12 @@
 	)
 	(
 		// Users to add ports here
-
+		input wire  i_start_xcoord_dma,
+		input wire  i_stop_xcoord_dma,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
-		// Initiate AXI transactions
-		input wire  start,
+		output wire ERROR,
 		// Global Clock Signal.
 		input wire  M_AXI_ACLK,
 		// Global Reset Singal. This Signal is Active Low
@@ -201,7 +201,7 @@
 	wire  	write_resp_error;
 	wire  	read_resp_error;
 	wire  	rnext;
-	wire  	start;
+	wire  	i_start_xcoord_dma;
 
 	// I/O Connections assignments
 
@@ -260,7 +260,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || start)
+	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
 	      begin
 	        axi_awvalid <= 1'b0;
 	      end
@@ -280,7 +280,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || start)
+	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
 	      begin
 	        axi_wvalid <= 1'b0;
 	      end
@@ -305,7 +305,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || start)
+	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
 	      begin
 	        axi_arvalid <= 1'b0;
 	      end
@@ -326,7 +326,7 @@
 	// Next address after ARREADY indicates previous address acceptance
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || start)
+	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
 	      begin
 	        axi_araddr <= 'b0;
 	      end
@@ -355,7 +355,7 @@
 	 */
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || start)
+	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
 	      begin
 	        axi_rready <= 1'b0;
 	      end
@@ -391,7 +391,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || start)
+	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
 	      begin
 	        error_reg <= 1'b0;
 	      end
@@ -422,7 +422,7 @@
 	        case (mst_exec_state)
 
 	          IDLE:
-	            if (start)
+	            if (i_start_xcoord_dma)
 	              begin
 	                mst_exec_state  <= INIT_READ;
 	              end

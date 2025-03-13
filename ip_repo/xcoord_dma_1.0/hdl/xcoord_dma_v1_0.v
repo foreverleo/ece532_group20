@@ -56,8 +56,6 @@
 		input wire  s00_axi_rready,
 
 		// Ports of Axi Master Bus Interface M00_AXI
-		input wire  m00_axi_init_axi_txn,
-		output wire  m00_axi_txn_done,
 		output wire  m00_axi_error,
 		input wire  m00_axi_aclk,
 		input wire  m00_axi_aresetn,
@@ -104,6 +102,10 @@
 		input wire  m00_axi_rvalid,
 		output wire  m00_axi_rready
 	);
+
+	wire start_xcoord_dma;
+	wire stop_xcoord_dma;
+
 // Instantiation of Axi Bus Interface S00_AXI
 	xcoord_dma_v1_0_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
@@ -129,7 +131,10 @@
 		.S_AXI_RDATA(s00_axi_rdata),
 		.S_AXI_RRESP(s00_axi_rresp),
 		.S_AXI_RVALID(s00_axi_rvalid),
-		.S_AXI_RREADY(s00_axi_rready)
+		.S_AXI_RREADY(s00_axi_rready),
+
+		.o_start_xcoord_dma(start_xcoord_dma),
+		.o_stop_xcoord_dma(stop_xcoord_dma)
 	);
 
 // Instantiation of Axi Bus Interface M00_AXI
@@ -145,8 +150,9 @@
 		.C_M_AXI_RUSER_WIDTH(C_M00_AXI_RUSER_WIDTH),
 		.C_M_AXI_BUSER_WIDTH(C_M00_AXI_BUSER_WIDTH)
 	) xcoord_dma_v1_0_M00_AXI_inst (
-		.INIT_AXI_TXN(m00_axi_init_axi_txn),
-		.TXN_DONE(m00_axi_txn_done),
+		.i_start_xcoord_dma(start_xcoord_dma),
+		.i_stop_xcoord_dma(stop_xcoord_dma),
+
 		.ERROR(m00_axi_error),
 		.M_AXI_ACLK(m00_axi_aclk),
 		.M_AXI_ARESETN(m00_axi_aresetn),
