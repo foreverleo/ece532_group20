@@ -179,14 +179,9 @@
 	parameter [1:0] IDLE = 2'b00, // This state initiates AXI4Lite transaction
 			// after the state machine changes state to INIT_WRITE
 			// when there is 0 to 1 transition on INIT_AXI_TXN
-		INIT_WRITE   = 2'b01, // This state initializes write transaction,
-			// once writes are done, the state machine
-			// changes state to INIT_READ
-		INIT_READ = 2'b10, // This state initializes read transaction
+		INIT_READ = 2'b10; // This state initializes read transaction
 			// once reads are done, the state machine
 			// changes state to INIT_COMPARE
-		INIT_COMPARE = 2'b11; // This state issues the status of comparison
-			// of the written data with the read data
 
 	 reg [1:0] mst_exec_state;
 
@@ -474,8 +469,6 @@
 	        case (mst_exec_state)
 
 	          IDLE:
-	            // This state is responsible to wait for user defined C_M_START_COUNT
-	            // number of clock cycles.
 	            if (start)
 	              begin
 	                mst_exec_state  <= INIT_READ;
@@ -485,24 +478,10 @@
 	                mst_exec_state  <= IDLE;
 	              end
 
-	          INIT_WRITE:
-	            if (writes_done)
-	              begin
-	                mst_exec_state <= INIT_WRITE;//
-	              end
-	            else
-	              begin
-	                mst_exec_state  <= INIT_WRITE;
-	              end
-
 	          INIT_READ:
-	            // This state is responsible to issue start_single_read pulse to
-	            // initiate a read transaction. Read transactions will be
-	            // issued until burst_read_active signal is asserted.
-	            // read controller
 	            if (reads_done)
 	              begin
-	                mst_exec_state <= INIT_COMPARE;
+	                mst_exec_state <= IDLE;
 	              end
 	            else
 	              begin
@@ -518,14 +497,7 @@
 	                 end
 	              end
 
-	          INIT_COMPARE:
-	            // This state is responsible to issue the state of comparison
-	            // of written data with the read data. If no error flags are set,
-	            //if (~error_reg)
-	            begin
-	              mst_exec_state <= IDLE;
-	            end
-	          default :
+	          default:
 	            begin
 	              mst_exec_state  <= IDLE;
 	            end
