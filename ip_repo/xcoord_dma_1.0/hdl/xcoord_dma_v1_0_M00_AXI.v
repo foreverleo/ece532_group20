@@ -195,7 +195,7 @@
 
   reg burst_read_done;
   reg frame_done;
-  reg start_xcoord_dma_reg;
+  reg dma_active;
 
   reg [1:0] rgb_offset_reg;
   reg [10:0] burst_cnt;
@@ -425,7 +425,7 @@
 
       case (fsm_state)
         ST_IDLE: begin
-          if (start_xcoord_dma_reg) begin
+          if (dma_active) begin
             fsm_state_nxt = ST_INIT_BURST_READ;
           end else begin
             fsm_state_nxt = ST_IDLE;
@@ -433,7 +433,17 @@
         end
 
         ST_CHECK_STOP_COND: begin
-          if (burst_cnt >= 11'd1013 || red_pixel_found_reg) begin
+          if (!dma_active) begin
+            frame_done = 1'b1;
+            if (red_pixel_found_reg) begin
+              fsm_state_nxt = ST_WRITE_XCOORD;
+            end else begin
+              fsm_state_nxt = ST_IDLE;
+            end
+          end else if (red_pixel_found_reg) begin
+            frame_done = 1'b1;
+            fsm_state_nxt = ST_INIT_WRITE_XCOORD;
+          end else if (burst_cnt >= 11'd1013) begin
             frame_done = 1'b1;
             fsm_state_nxt = ST_INIT_WRITE_XCOORD;
           end else begin
@@ -554,11 +564,11 @@
     // DMA start/stop toggle register
     always @(posedge M_AXI_ACLK) begin
       if (!M_AXI_ARESETN) begin
-        start_xcoord_dma_reg <= 1'b0;
+        dma_active <= 1'b0;
       end else if (i_start_xcoord_dma) begin
-        start_xcoord_dma_reg <= 1'b1;
+        dma_active <= 1'b1;
       end else if (i_stop_xcoord_dma) begin
-        start_xcoord_dma_reg <= 1'b0;
+        dma_active <= 1'b0;
       end
     end
 
