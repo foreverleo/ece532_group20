@@ -176,12 +176,15 @@
 	// Example State machine to initialize counter, initialize write transactions,
 	// initialize read transactions and comparison of read data with the
 	// written data words.
-	parameter [1:0] ST_IDLE             = 2'b0,
-	                ST_CHECK_NUM_BURSTS = 2'b1;
-	                ST_READ_FRAME_BUF   = 2'b10;
+	parameter [2:0] ST_IDLE             = 3'h0,
+	                ST_CHECK_STOP_COND = 3'h1,
+	                ST_INIT_BURST_READ   = 3'h2,
+	                ST_BURST_READ = 3'h3,
+	                ST_INIT_WRITE_XCOORD = 3'h4,
+	                ST_WRITE_XCOORD = 3'h5;
 
-	reg [1:0] fsm_state;
-  wire [1:0] fsm_state_nxt;
+	reg [2:0] fsm_state;
+  reg [2:0] fsm_state_nxt;
 
 	// AXI4LITE signals
 	//AXI4 internal temp signals
@@ -191,7 +194,7 @@
 	reg  	axi_rready;
 	//size of C_M_AXI_BURST_LEN length burst in bytes
 	wire [C_TRANSACTIONS_NUM+2 : 0] 	burst_size_bytes;
-	wire  start_burst_read;
+	reg  start_burst_read;
   reg   start_write;
   reg   write_initiated_reg;
 	reg  	error_reg;
@@ -295,8 +298,8 @@
 	//Write Response (B) Channel
 	//----------------------------
 
-    always @(posedge aclk) begin
-      if (!aresetn) begin
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN) begin
         write_initiated_reg <= 1'b0;
       end else if (!write_initiated_reg && start_write) begin
         write_initiated_reg <= 1'b1;
@@ -305,7 +308,7 @@
       end
     end
 
-	  assign write_resp_error = axi_bready && M_AXI_BVALID && M_AXI_BRESP[1];
+	  assign write_resp_error = M_AXI_BREADY && M_AXI_BVALID && M_AXI_BRESP[1];
 
 
 	//----------------------------
@@ -397,8 +400,8 @@
     assign ERROR = error_reg;
 
 	  //implement master command interface state machine
-    wire burst_read_done;
-    wire frame_done;
+    reg burst_read_done;
+    reg frame_done;
     reg stop_xcoord_dma_reg;
 
     always @(posedge M_AXI_ACLK) begin
@@ -418,9 +421,9 @@
       frame_done = 1'b0;
 
       case (fsm_state)
-        IDLE: begin
+        ST_IDLE: begin
           if (i_start_xcoord_dma) begin
-            fsm_state_nxt = ST_INIT_READ_FRAME_BUF;
+            fsm_state_nxt = ST_INIT_BURST_READ;
           end else begin
             fsm_state_nxt = ST_IDLE;
           end
@@ -429,7 +432,7 @@
         ST_CHECK_STOP_COND: begin
           if (burst_cnt >= 8'd190 || red_pixel_found_reg || stop_xcoord_dma_reg) begin
             frame_done = 1'b1;
-            fsm_state_nxt = ST_WRITE_X_COOR;
+            fsm_state_nxt = ST_INIT_WRITE_XCOORD;
           end else begin
             fsm_state_nxt = ST_INIT_BURST_READ;
           end
@@ -450,16 +453,16 @@
           end
         end
 
-        ST_INIT_WRITE_X_COOR: begin
-          fsm_state_nxt = ST_WRITE_X_COOR;
+        ST_INIT_WRITE_XCOORD: begin
+          fsm_state_nxt = ST_WRITE_XCOORD;
           start_write = 1'b1;
         end
 
-        ST_WRITE_X_COOR: begin
+        ST_WRITE_XCOORD: begin
           if (M_AXI_BVALID) begin
             fsm_state_nxt = ST_IDLE;
           end else begin
-            fsm_state_nxt = ST_WRITE_X_COOR;
+            fsm_state_nxt = ST_WRITE_XCOORD;
           end
         end
 
