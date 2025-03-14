@@ -183,8 +183,23 @@
 	                ST_INIT_WRITE_XCOORD = 3'h4,
 	                ST_WRITE_XCOORD = 3'h5;
 
-	reg [2:0] fsm_state;
-  reg [2:0] fsm_state_nxt;
+
+  //---------------------//
+  // Signal Declarations //
+  //---------------------//
+
+	reg [2:0] fsm_state, fsm_state_nxt;
+
+  reg red_pixel_found_reg;
+  reg [10:0] xcoord_cnt;
+
+  reg burst_read_done;
+  reg frame_done;
+  reg start_xcoord_dma_reg;
+
+  reg [1:0] rgb_offset_reg;
+  reg [10:0] burst_cnt;
+
 
 	// AXI4LITE signals
 	//AXI4 internal temp signals
@@ -224,7 +239,7 @@
 	assign M_AXI_AWUSER	= 'b1;
 	assign M_AXI_AWVALID	= axi_awvalid;
 	//Write Data(W)
-	assign M_AXI_WDATA	= {{(C_M_AXI_DATA_WIDTH-11){1'b0}}, xcoord_reg};
+	assign M_AXI_WDATA	= red_pixel_found_reg ? {{(C_M_AXI_DATA_WIDTH-11){1'b0}}, xcoord_cnt} : {C_M_AXI_DATA_WIDTH{1'b0}};
 	//All bursts are complete and aligned in this example
 	assign M_AXI_WSTRB	= {(C_M_AXI_DATA_WIDTH/8){1'b1}};
 	assign M_AXI_WLAST	= 1'b1;
@@ -400,18 +415,6 @@
     assign ERROR = error_reg;
 
 	  //implement master command interface state machine
-    reg burst_read_done;
-    reg frame_done;
-    reg stop_xcoord_dma_reg;
-
-    always @(posedge M_AXI_ACLK) begin
-      if (!M_AXI_ARESETN) begin
-        fsm_state <= ST_IDLE;
-      end else begin
-        fsm_state <= fsm_state_nxt;
-      end
-    end
-
 	  always @(*) begin
       M_AXI_ARADDR = C_M_TARGET_SLAVE_BASE_ADDR;
 
@@ -422,7 +425,7 @@
 
       case (fsm_state)
         ST_IDLE: begin
-          if (i_start_xcoord_dma) begin
+          if (start_xcoord_dma_reg) begin
             fsm_state_nxt = ST_INIT_BURST_READ;
           end else begin
             fsm_state_nxt = ST_IDLE;
@@ -430,7 +433,7 @@
         end
 
         ST_CHECK_STOP_COND: begin
-          if (burst_cnt >= 8'd190 || red_pixel_found_reg || stop_xcoord_dma_reg) begin
+          if (burst_cnt >= 11'd1013 || red_pixel_found_reg) begin
             frame_done = 1'b1;
             fsm_state_nxt = ST_INIT_WRITE_XCOORD;
           end else begin
@@ -472,22 +475,20 @@
       endcase
 	  end //MASTER_EXECUTION_PROC
 
-    reg [1:0] rgb_offset_reg;
-    reg [7:0] burst_cnt;
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN) begin
+        fsm_state <= ST_IDLE;
+      end else begin
+        fsm_state <= fsm_state_nxt;
+      end
+    end
 
+    // Pixel detetction logic
     wire red_pixel_found;
-    assign red_pixel_found = M_AXI_RDATA[rgb_offset_reg*8 +: 8] > 8'd150 && M_AXI_RDATA[(rgb_offset_reg+1)*8 +: 8] < 8'd100 && M_AXI_RDATA[(rgb_offset_reg+2)*8 +: 8] < 8'd100;
-
-    reg red_pixel_found_reg;
-    reg [10:0] xcoord_reg;
-
-    always @(posedge M_AXI_ACLK) begin
-      if (!M_AXI_ARESETN || frame_done) begin
-        red_pixel_found_reg <= 1'b0;
-      end else if (red_pixel_found) begin
-        red_pixel_found_reg <= 1'b1;
-      end
-    end
+    assign red_pixel_found = M_AXI_RDATA[ rgb_offset_reg   *8 +: 8] > 8'd150 &&
+                             M_AXI_RDATA[(rgb_offset_reg+1)*8 +: 8] < 8'd100 &&
+                             M_AXI_RDATA[(rgb_offset_reg+2)*8 +: 8] < 8'd100 &&
+                             xcoord_cnt < 11'd1280; // Hack
 
     always @(posedge M_AXI_ACLK) begin
       if (!M_AXI_ARESETN || frame_done) begin
@@ -497,34 +498,67 @@
       end
     end
 
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN || frame_done) begin
+        red_pixel_found_reg <= 1'b0;
+      end else if (red_pixel_found) begin
+        red_pixel_found_reg <= 1'b1;
+      end
+    end
+
+    // RGB offset register
     always @(posedge M_AXI_ACLK) begin
       if (!M_AXI_ARESETN || frame_done) begin
         rgb_offset_reg <= 2'b0;
-        xcoord_reg <= 11'b0;
       end else if (M_AXI_RVALID) begin
         if (rgb_offset_reg >= 2'd2) begin
           rgb_offset_reg <= 2'b0;
-          xcoord_reg <= xcoord_reg + 11'd6; // Every memory word (128 bits) is 5 and 1/3 pixels (24 bits each)
         end else begin
           rgb_offset_reg <= rgb_offset_reg + 2'b1;
-			    xcoord_reg <= xcoord_reg + 11'd5; // Every memory word (128 bits) is 5 and 1/3 pixels (24 bits each)
         end
       end
     end
 
-    always @(posedge M_AXI_ACLK) begin
-      if (!M_AXI_ARESETN || frame_done) begin
-        burst_cnt <= 8'b0;
-      end else if (burst_read_done) begin
-        burst_cnt <= burst_cnt + 8'b1;
+    // X-coordinate counter 
+    always @(*) begin
+      if (rgb_offset_reg >= 2'd2) begin
+        // Every memory word (128 bits) is 5 and 1/3 pixels (24 bits each)
+        xcoord_cnt_nxt = xcoord_cnt + 11'd6;
+      end else begin
+        xcoord_cnt_nxt = xcoord_cnt + 11'd5;
+      end
+
+      // Wrap counter around
+      if (xcoord_cnt_nxt >= 11'd1920) begin
+        xcoord_cnt_nxt = xcoord_cnt_nxt - 11'd1920;
       end
     end
 
     always @(posedge M_AXI_ACLK) begin
       if (!M_AXI_ARESETN || frame_done) begin
-        stop_xcoord_dma_reg <= 1'b0;
+        xcoord_cnt <= 11'b0;
+      end else if (M_AXI_RVALID) begin
+        xcoord_cnt <= xcoord_cnt_nxt;
+      end
+    end
+
+    // Number of read bursts counter
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN || frame_done) begin
+        burst_cnt <= 11'b0;
+      end else if (burst_read_done) begin
+        burst_cnt <= burst_cnt + 11'b1;
+      end
+    end
+
+    // DMA start/stop toggle register
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN) begin
+        start_xcoord_dma_reg <= 1'b0;
+      end else if (i_start_xcoord_dma) begin
+        start_xcoord_dma_reg <= 1'b1;
       end else if (i_stop_xcoord_dma) begin
-        stop_xcoord_dma_reg <= 1'b1;
+        start_xcoord_dma_reg <= 1'b0;
       end
     end
 
