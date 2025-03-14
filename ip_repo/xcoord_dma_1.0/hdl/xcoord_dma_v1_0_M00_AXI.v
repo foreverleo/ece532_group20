@@ -221,7 +221,7 @@
 	assign M_AXI_AWUSER	= 'b1;
 	assign M_AXI_AWVALID	= axi_awvalid;
 	//Write Data(W)
-	assign M_AXI_WDATA	= xcoord_reg;
+	assign M_AXI_WDATA	= {{(C_M_AXI_DATA_WIDTH-11){1'b0}}, xcoord_reg};
 	//All bursts are complete and aligned in this example
 	assign M_AXI_WSTRB	= {(C_M_AXI_DATA_WIDTH/8){1'b1}};
 	assign M_AXI_WLAST	= 1'b1;
@@ -501,9 +501,10 @@
       end else if (M_AXI_RVALID) begin
         if (rgb_offset_reg >= 2'd2) begin
           rgb_offset_reg <= 2'b0;
-          xcoord_reg <= xcoord_reg + 11'b1;
+          xcoord_reg <= xcoord_reg + 11'd6; // Every memory word (128 bits) is 5 and 1/3 pixels (24 bits each)
         end else begin
           rgb_offset_reg <= rgb_offset_reg + 2'b1;
+			    xcoord_reg <= xcoord_reg + 11'd5; // Every memory word (128 bits) is 5 and 1/3 pixels (24 bits each)
         end
       end
     end
