@@ -9,7 +9,7 @@
 		// Do not modify the parameters beyond this line
 
 		// Base address of targeted slave
-		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000, // TODO
+		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000, // Todo
 		// Burst Length. Supports 1, 2, 4, 8, 16, 32, 64, 128, 256 burst lengths
 		parameter integer C_M_AXI_BURST_LEN	= 256,
 		// Thread ID Width
@@ -104,7 +104,7 @@
 		output wire [C_M_AXI_ID_WIDTH-1 : 0] M_AXI_ARID,
 		// Read address. This signal indicates the initial
     // address of a read burst transaction.
-		output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_ARADDR,
+		output reg [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_ARADDR,
 		// Burst length. The burst length gives the exact number of transfers in a burst
 		output wire [7 : 0] M_AXI_ARLEN,
 		// Burst size. This signal indicates the size of each transfer in the burst
@@ -176,27 +176,25 @@
 	// Example State machine to initialize counter, initialize write transactions,
 	// initialize read transactions and comparison of read data with the
 	// written data words.
-	parameter [1:0] IDLE = 2'b00, // This state initiates AXI4Lite transaction
-			// after the state machine changes state to INIT_WRITE
-			// when there is 0 to 1 transition on INIT_AXI_TXN
-		INIT_READ = 2'b10; // This state initializes read transaction
-			// once reads are done, the state machine
-			// changes state to INIT_COMPARE
+	parameter [1:0] ST_IDLE             = 2'b0,
+	                ST_CHECK_NUM_BURSTS = 2'b1;
+	                ST_READ_FRAME_BUF   = 2'b10;
 
-	 reg [1:0] mst_exec_state;
+	reg [1:0] fsm_state;
+  wire [1:0] fsm_state_nxt;
 
 	// AXI4LITE signals
 	//AXI4 internal temp signals
 	reg  	axi_awvalid;
 	reg  	axi_wvalid;
-	reg [C_M_AXI_ADDR_WIDTH-1 : 0] 	axi_araddr;
 	reg  	axi_arvalid;
 	reg  	axi_rready;
 	//size of C_M_AXI_BURST_LEN length burst in bytes
 	wire [C_TRANSACTIONS_NUM+2 : 0] 	burst_size_bytes;
-	reg  	start_single_burst_read;
+	wire  start_burst_read;
+  reg   start_write;
+  reg   write_initiated_reg;
 	reg  	error_reg;
-	reg  	burst_read_active;
 	//Interface response error flags
 	wire  	write_resp_error;
 	wire  	read_resp_error;
@@ -208,7 +206,7 @@
 	//I/O Connections. Write Address (AW)
 	assign M_AXI_AWID	= 'b0;
 	//The AXI address is a concatenation of the target base address + active offset range
-	assign M_AXI_AWADDR	= ; // Todo
+	assign M_AXI_AWADDR	= 'h0; // Todo
 	//Burst LENgth is number of transaction beats, minus 1
 	assign M_AXI_AWLEN	= 8'b0;
 	//Size should be C_M_AXI_DATA_WIDTH, in 2^SIZE bytes, otherwise narrow bursts are used
@@ -223,18 +221,17 @@
 	assign M_AXI_AWUSER	= 'b1;
 	assign M_AXI_AWVALID	= axi_awvalid;
 	//Write Data(W)
-	assign M_AXI_WDATA	= ; // Todo
+	assign M_AXI_WDATA	= xcoord_reg;
 	//All bursts are complete and aligned in this example
 	assign M_AXI_WSTRB	= {(C_M_AXI_DATA_WIDTH/8){1'b1}};
 	assign M_AXI_WLAST	= 1'b1;
 	assign M_AXI_WUSER	= 'b0;
 	assign M_AXI_WVALID	= axi_wvalid;
 	//Write Response (B)
-	assign M_AXI_BREADY	= ; // Todo: write_initiated
+	assign M_AXI_BREADY	= write_initiated_reg;
 
 	//Read Address (AR)
 	assign M_AXI_ARID	= 'b0;
-	assign M_AXI_ARADDR	= C_M_TARGET_SLAVE_BASE_ADDR + axi_araddr;
 	//Burst LENgth is number of transaction beats, minus 1
 	assign M_AXI_ARLEN	= C_M_AXI_BURST_LEN - 1;
 	//Size should be C_M_AXI_DATA_WIDTH, in 2^n bytes, otherwise narrow bursts are used
@@ -260,11 +257,11 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
+	    if (!M_AXI_ARESETN)
 	      begin
 	        axi_awvalid <= 1'b0;
 	      end
-	    else if (/*Todo: Init write*/)
+	    else if (start_write)
 	      begin
 	        axi_awvalid <= 1'b1;
 	      end
@@ -280,23 +277,35 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
+	    if (!M_AXI_ARESETN)
 	      begin
 	        axi_wvalid <= 1'b0;
 	      end
-	    else if (/*Todo: Init write*/)
+	    else if (start_write)
 	      begin
 	        axi_wvalid <= 1'b1;
 	      end
-	    else
-	      axi_wvalid <= axi_wvalid;
+      else if (M_AXI_WREADY && axi_wvalid)
+        begin
+          axi_wvalid <= 1'b0;
+        end
 	  end
 
 	//----------------------------
 	//Write Response (B) Channel
 	//----------------------------
 
-	  assign write_resp_error = axi_bready & M_AXI_BVALID & M_AXI_BRESP[1];
+    always @(posedge aclk) begin
+      if (!aresetn) begin
+        write_initiated_reg <= 1'b0;
+      end else if (!write_initiated_reg && start_write) begin
+        write_initiated_reg <= 1'b1;
+      end else if (write_initiated_reg && M_AXI_BVALID) begin
+        write_initiated_reg <= 1'b0;
+      end
+    end
+
+	  assign write_resp_error = axi_bready && M_AXI_BVALID && M_AXI_BRESP[1];
 
 
 	//----------------------------
@@ -305,12 +314,12 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
+	    if (!M_AXI_ARESETN)
 	      begin
 	        axi_arvalid <= 1'b0;
 	      end
 	    // If previously not valid , start next transaction
-	    else if (~axi_arvalid && start_single_burst_read)
+	    else if (start_burst_read)
 	      begin
 	        axi_arvalid <= 1'b1;
 	      end
@@ -318,24 +327,6 @@
 	      begin
 	        axi_arvalid <= 1'b0;
 	      end
-	    else
-	      axi_arvalid <= axi_arvalid;
-	  end
-
-
-	// Next address after ARREADY indicates previous address acceptance
-	  always @(posedge M_AXI_ACLK)
-	  begin
-	    if (!M_AXI_ARESETN || i_start_xcoord_dma)
-	      begin
-	        axi_araddr <= 'b0;
-	      end
-	    else if (M_AXI_ARREADY && axi_arvalid)
-	      begin
-	        axi_araddr <= axi_araddr + burst_size_bytes;
-	      end
-	    else
-	      axi_araddr <= axi_araddr;
 	  end
 
 
@@ -403,100 +394,134 @@
 	      error_reg <= error_reg;
 	  end
 
+    assign ERROR = error_reg;
 
 	  //implement master command interface state machine
+    wire burst_read_done;
+    wire frame_done;
+    reg stop_xcoord_dma_reg;
 
-	  always @ ( posedge M_AXI_ACLK)
-	  begin
-	    if (!M_AXI_ARESETN)
-	      begin
-	        // reset condition
-	        // All the signals are assigned default values under reset condition
-	        mst_exec_state      <= IDLE;
-	        start_single_burst_read  <= 1'b0;
-	      end
-	    else
-	      begin
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN) begin
+        fsm_state <= ST_IDLE;
+      end else begin
+        fsm_state <= fsm_state_nxt;
+      end
+    end
 
-	        // state transition
-	        case (mst_exec_state)
+	  always @(*) begin
+      M_AXI_ARADDR = C_M_TARGET_SLAVE_BASE_ADDR;
 
-	          IDLE:
-	            if (i_start_xcoord_dma)
-	              begin
-	                mst_exec_state  <= INIT_READ;
-	              end
-	            else
-	              begin
-	                mst_exec_state  <= IDLE;
-	              end
+      start_burst_read = 1'b0;
+      burst_read_done = 1'b0;
+      start_write = 1'b0;
+      frame_done = 1'b0;
 
-	          INIT_READ:
-	            if (M_AXI_RVALID && axi_rready && M_AXI_RLAST)
-	              begin
-	                mst_exec_state <= IDLE;
-	              end
-	            else
-	              begin
-	                mst_exec_state  <= INIT_READ;
-					
-	                if (~axi_arvalid && ~burst_read_active && ~start_single_burst_read)
-	                  begin
-	                    start_single_burst_read <= 1'b1;
-	                  end
-	               else
-	                 begin
-	                   start_single_burst_read <= 1'b0; //Negate to generate a pulse
-	                 end
-	              end
+      case (fsm_state)
+        IDLE: begin
+          if (i_start_xcoord_dma) begin
+            fsm_state_nxt = ST_INIT_READ_FRAME_BUF;
+          end else begin
+            fsm_state_nxt = ST_IDLE;
+          end
+        end
 
-	          default:
-	            begin
-	              mst_exec_state  <= IDLE;
-	            end
-	        endcase
-	      end
+        ST_CHECK_STOP_COND: begin
+          if (burst_cnt >= 8'd190 || red_pixel_found_reg || stop_xcoord_dma_reg) begin
+            frame_done = 1'b1;
+            fsm_state_nxt = ST_WRITE_X_COOR;
+          end else begin
+            fsm_state_nxt = ST_INIT_BURST_READ;
+          end
+        end
+
+        ST_INIT_BURST_READ: begin
+          start_burst_read = 1'b1;
+          fsm_state_nxt = ST_BURST_READ;
+        end
+
+        ST_BURST_READ: begin
+          M_AXI_ARADDR = C_M_TARGET_SLAVE_BASE_ADDR + burst_cnt * burst_size_bytes;
+          if (M_AXI_RVALID && axi_rready && M_AXI_RLAST) begin
+            burst_read_done = 1'b1;
+            fsm_state_nxt = ST_CHECK_STOP_COND;
+          end else begin
+            fsm_state_nxt = ST_BURST_READ;
+          end
+        end
+
+        ST_INIT_WRITE_X_COOR: begin
+          fsm_state_nxt = ST_WRITE_X_COOR;
+          start_write = 1'b1;
+        end
+
+        ST_WRITE_X_COOR: begin
+          if (M_AXI_BVALID) begin
+            fsm_state_nxt = ST_IDLE;
+          end else begin
+            fsm_state_nxt = ST_WRITE_X_COOR;
+          end
+        end
+
+        default: begin
+          fsm_state_nxt = ST_IDLE;
+        end
+      endcase
 	  end //MASTER_EXECUTION_PROC
 
-    reg [1:0] rgb_offset;
+    reg [1:0] rgb_offset_reg;
     reg [7:0] burst_cnt;
 
     wire red_pixel_found;
-    assign red_pixel_found = M_AXI_RDATA[rgb_offset*8 +: 8] > 8'd150 && M_AXI_RDATA[(rgb_offset+1)*8 +: 8] < 8'd100 && M_AXI_RDATA[(reb_offset+2)*8 +: 8] < 8'd100;
+    assign red_pixel_found = M_AXI_RDATA[rgb_offset_reg*8 +: 8] > 8'd150 && M_AXI_RDATA[(rgb_offset_reg+1)*8 +: 8] < 8'd100 && M_AXI_RDATA[(rgb_offset_reg+2)*8 +: 8] < 8'd100;
 
+    reg red_pixel_found_reg;
+    reg [10:0] xcoord_reg;
 
-    // Todo
     always @(posedge M_AXI_ACLK) begin
-      if (!M_AXI_ARESETN) begin
-        rgb_offset <= 2'b0;
-      end else if (burst_read_active) begin
-        if (rgb_offset == 2'd2) begin
-          rgb_offset <= 2'b0;
+      if (!M_AXI_ARESETN || frame_done) begin
+        red_pixel_found_reg <= 1'b0;
+      end else if (red_pixel_found) begin
+        red_pixel_found_reg <= 1'b1;
+      end
+    end
+
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN || frame_done) begin
+        red_pixel_found_reg <= 1'b0;
+      end else if (red_pixel_found) begin
+        red_pixel_found_reg <= 1'b1;
+      end
+    end
+
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN || frame_done) begin
+        rgb_offset_reg <= 2'b0;
+        xcoord_reg <= 11'b0;
+      end else if (M_AXI_RVALID) begin
+        if (rgb_offset_reg >= 2'd2) begin
+          rgb_offset_reg <= 2'b0;
+          xcoord_reg <= xcoord_reg + 11'b1;
         end else begin
-          rgb_offset <= rgb_offset + 2'b1;
+          rgb_offset_reg <= rgb_offset_reg + 2'b1;
         end
-      end else begin
-        rgb_offset <= 2'b0;
       end
     end
 
-    // Todo
     always @(posedge M_AXI_ACLK) begin
-      if (!M_AXI_ARESETN) begin
+      if (!M_AXI_ARESETN || frame_done) begin
         burst_cnt <= 8'b0;
-      end else if (burst_read_active) begin
-        if (burst_cnt >= 8'd190) begin
-            burst_cnt <= burst_cnt;
-        else
-          burst_cnt <= burst_cnt + 8'b1;
-        end
-      end else begin
-        burst_cnt <= 8'b0;
+      end else if (burst_read_done) begin
+        burst_cnt <= burst_cnt + 8'b1;
       end
     end
 
-	// Add user logic here
-
-	// User logic ends
+    always @(posedge M_AXI_ACLK) begin
+      if (!M_AXI_ARESETN || frame_done) begin
+        stop_xcoord_dma_reg <= 1'b0;
+      end else if (i_stop_xcoord_dma) begin
+        stop_xcoord_dma_reg <= 1'b1;
+      end
+    end
 
 	endmodule
