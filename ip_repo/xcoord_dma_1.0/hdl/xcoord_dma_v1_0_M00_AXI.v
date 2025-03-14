@@ -9,7 +9,7 @@
 		// Do not modify the parameters beyond this line
 
 		// Base address of targeted slave
-		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000, // Todo
+		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h90000000,
 		// Burst Length. Supports 1, 2, 4, 8, 16, 32, 64, 128, 256 burst lengths
 		parameter integer C_M_AXI_BURST_LEN	= 256,
 		// Thread ID Width
@@ -206,7 +206,7 @@
 	//I/O Connections. Write Address (AW)
 	assign M_AXI_AWID	= 'b0;
 	//The AXI address is a concatenation of the target base address + active offset range
-	assign M_AXI_AWADDR	= 'h0; // Todo
+	assign M_AXI_AWADDR	= 32'h93000000;
 	//Burst LENgth is number of transaction beats, minus 1
 	assign M_AXI_AWLEN	= 8'b0;
 	//Size should be C_M_AXI_DATA_WIDTH, in 2^SIZE bytes, otherwise narrow bursts are used
