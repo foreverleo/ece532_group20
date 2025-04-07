@@ -1,0 +1,9 @@
+The primary issue when migrating the Nexys Video HDMI Demo project to Vivado 2018.3 is in the SDK code. The video_demo.c code initializes the frame buffers using:
+
+pFrames[i] = frameBuf[i]; 
+
+which can cause issues as it may be put into local memory instead of DDR. The fix is to replace the line with to initialize the buffers at a proper memory address, like: 
+
+pFrames[i] = (u8 *)(0x90000000 + i * 0x1000000);
+
+Included in this directory is a fixed video_demo.c file.
