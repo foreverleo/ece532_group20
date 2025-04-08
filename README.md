@@ -3,7 +3,7 @@
 # Project Description
 The project entails moving two drum sticks (with one accelerometer attached to each stick, one stick with a green tip and one stick with a red tip) wired to the Nexys Video board. Depending on the specific spatial zone the user is doing a drum hit in the air, analogous to hitting drum sticks onto drums, to produce a corresponding sound from the board. The SPI-based accelerometer attached to the front of the drum stick will take the hand movement velocity data to the board. If the velocity reading exceeds the set threshold, then the action is registered as a hit. After a hit is detected, we use the image data read from the camera to determine the location of the hit. The visual output through HDMI will then indicate location and velocity data read. Then we generate drum sound accordingly and output it through the on-board audio output port.
 
-An introduction and demo of the project can be found [here](https://www.youtube.com/playlist?list=PL375u3xhh3XQRRNpfu7j61EfCjszAm4z5)
+An introduction and demo of the project can be found [here](https://www.youtube.com/playlist?list=PL375u3xhh3XQRRNpfu7j61EfCjszAm4z5).
 
 This project was developed using Vivado 2018.3.
 
