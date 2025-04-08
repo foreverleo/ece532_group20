@@ -32,3 +32,10 @@ The project will be implemented using a MicroBlaze processor to interact with th
     - The software code is under: `Final_drum.sdk/drum_v6/src`
 * `Two_sounds_with_accelerometer`: The version where we generate a sound after triggering a hit from the accelerometer. The push buttons left and right can be used to switch between bass and cymbal sound, and the up and down button can be used to adjust the sound output volume.
     - The software code is under: `Two_sounds_with_accelerometer.sdk/acl_audio_128/`
+ 
+### Reference Projects
+* [Nexys Video HDMI Demo](https://digilent.com/reference/programmable-logic/nexys-video/demos/hdmi)
+* [Nexys Video DMA Audio Demo]([https://example.com](https://digilent.com/reference/programmable-logic/nexys-video/demos/dma-audio))
+* [Official Vivado Master IP Library]([https://example.com](https://github.com/Digilent/vivado-library/tree/master/ip))
+* [Simple WaveShare OV5640 Design for the Nexys 4 DDR]([https://example.com](https://github.com/charleslo/ece532_waveshare))
+
