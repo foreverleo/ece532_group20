@@ -9,7 +9,7 @@ An introduction and demo of the project can be found here: https://www.youtube.c
 Raymond Huynh\
 Leo Li\
 Joanne Tan\
-Xinyu Zhang\
+Xinyu Zhang
 
 ## Hardware Peripherals
 The project will be implemented using a MicroBlaze processor to interact with the following hardware peripherals:
