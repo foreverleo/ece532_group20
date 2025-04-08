@@ -35,7 +35,8 @@ The project will be implemented using a MicroBlaze processor to interact with th
  
 ### Reference Projects
 * [Nexys Video HDMI Demo](https://digilent.com/reference/programmable-logic/nexys-video/demos/hdmi)
-* [Nexys Video DMA Audio Demo]([https://example.com](https://digilent.com/reference/programmable-logic/nexys-video/demos/dma-audio))
-* [Official Vivado Master IP Library]([https://example.com](https://github.com/Digilent/vivado-library/tree/master/ip))
-* [Simple WaveShare OV5640 Design for the Nexys 4 DDR]([https://example.com](https://github.com/charleslo/ece532_waveshare))
+* [Nexys Video DMA Audio Demo](https://digilent.com/reference/programmable-logic/nexys-video/demos/dma-audio)
+* [Official Vivado Master IP Library](https://github.com/Digilent/vivado-library/tree/master/ip)
+* [Simple WaveShare OV5640 Design for the Nexys 4 DDR](https://github.com/charleslo/ece532_waveshare)
+
 
