@@ -5,6 +5,8 @@ The project entails moving two drum sticks (with one accelerometer attached to e
 
 An introduction and demo of the project can be found here: https://www.youtube.com/playlist?list=PL375u3xhh3XQRRNpfu7j61EfCjszAm4z5
 
+This project was developed using Vivado 2018.3.
+
 ![App Demo](doc/Air_Drums-Block_Diagram_Overview.png)
 
 ### Contributors
@@ -24,9 +26,9 @@ The project will be implemented using a MicroBlaze processor to interact with th
 |     -| HDMI output onto a monitor from the Nexys Video board to display drum hit effects through a simple generated animation|
 
 ## Repo Structure
-* Doc: Contains the final report and presentation slides
-* Ip_repo: Contains the custom x-coordinate detection IP, and the pack of Vivado IPs used in our project.
-* Final_drum: The final version code where after a hit is detected, drum sound will be generated from the audio output port and HDMI switches buffer to indicate the hit. Note that the x-coordination detection is integrated in the block design, but the software side is not yet fully integrated.
-    - The software code is under: Final_drum.sdk/drum_v6/src
-* Two_sounds_with_accelerometer: The version where we generate a sound after triggering a hit from the accelerometer. The push buttons left and right can be used to switch between bass and cymbal sound, and the up and down button can be used to adjust the sound output volume.
-    - The software code is under: Two_sounds_with_accelerometer.sdk/acl_audio_128/
+* `doc`: Contains the final report and presentation slides
+* `ip_repo`: Contains the custom x-coordinate detection IP, and the pack of Vivado IPs used in our project.
+* `Final_drum`: The final version code where after a hit is detected, drum sound will be generated from the audio output port and HDMI switches buffer to indicate the hit. Note that the x-coordination detection is integrated in the block design, but the software side is not yet fully integrated.
+    - The software code is under: `Final_drum.sdk/drum_v6/src`
+* `Two_sounds_with_accelerometer`: The version where we generate a sound after triggering a hit from the accelerometer. The push buttons left and right can be used to switch between bass and cymbal sound, and the up and down button can be used to adjust the sound output volume.
+    - The software code is under: `Two_sounds_with_accelerometer.sdk/acl_audio_128/`
