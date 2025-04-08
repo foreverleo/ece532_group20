@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;acl2_audio_v1/src/sound_data&apos; to &apos;sound_data.h&apos;" description="Rename resource &apos;sound_data&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/sound_data" name="sound_data.h" stamp="1741475002633" updateReferences="true"/>
+</session>

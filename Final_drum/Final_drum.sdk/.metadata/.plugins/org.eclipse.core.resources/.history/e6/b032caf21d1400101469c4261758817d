@@ -1,0 +1,976 @@
+
+
+#include "demo.h"
+
+/*AUDIO PROJECT*/
+#include "audio/audio.h"
+#include "dma/dma.h"
+#include "intc/intc.h"
+#include "userio/userio.h"
+
+/*HDMI PROJECT*/
+#include "video_capture/video_capture.h"
+#include "display_ctrl/display_ctrl.h"
+#include "xuartlite_l.h"
+#include <ctype.h>
+#include "sleep.h"
+
+/*COMMON*/
+#include "iic/iic.h"
+
+/***************************** Include Files *********************************/
+
+#include "xaxidma.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+#include "xdebug.h"
+#include "xiic.h"
+#include "xaxidma.h"
+
+#include <stdio.h>
+#include <math.h>
+#include "platform.h"
+#include "xspi.h"
+#include "sound_data.h"
+#include "Bass-Drum-1_stereo_bigEndian_v1.h"
+#include "piano2_stereo_48k_16bit_bigEndian_v1.h"
+#include "Crash-Cymbal-1_stereo_16bit_44k_bigEndian_v1.h"
+#include "Acoustic-Piano-C4_stereo_16bit_44k_bigEndian_v1.h"
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+ #include "xintc.h"
+#else
+ #include "xscugic.h"
+#endif
+
+/************************** Constant Definitions *****************************/
+
+/*
+ * Device hardware build related constants.
+ */
+
+// Audio constants
+// Number of seconds to record/playback
+#define NR_SEC_TO_REC_PLAY		5
+// ADC/DAC sampling rate in Hz
+//#define AUDIO_SAMPLING_RATE		1000
+#define AUDIO_SAMPLING_RATE	  96000
+// Number of samples to record/playback
+#define NR_AUDIO_SAMPLES		(NR_SEC_TO_REC_PLAY*AUDIO_SAMPLING_RATE)
+/* Timeout loop counter for reset
+ */
+#define RESET_TIMEOUT_COUNTER	10000
+#define TEST_START_VALUE	0x0
+
+
+/**************************** User Defined *******************************/
+#define THREASHOLD_G 2
+/**************************** Type Definitions *******************************/
+
+/*
+ * XPAR redefines
+ */
+#define DYNCLK_BASEADDR XPAR_AXI_DYNCLK_0_S_AXI_LITE_BASEADDR
+#define VGA_VDMA_ID XPAR_AXIVDMA_0_DEVICE_ID
+#define DISP_VTC_ID XPAR_VTC_0_DEVICE_ID
+#define VID_VTC_ID XPAR_VTC_1_DEVICE_ID
+#define VID_GPIO_ID XPAR_AXI_GPIO_VIDEO_DEVICE_ID
+#define VID_VTC_IRPT_ID XPAR_INTC_0_VTC_1_VEC_ID
+#define VID_GPIO_IRPT_ID XPAR_INTC_0_GPIO_0_VEC_ID
+#define SCU_TIMER_ID XPAR_AXI_TIMER_0_DEVICE_ID
+#define UART_BASEADDR XPAR_UARTLITE_0_BASEADDR
+
+/***************** Macros (Inline Functions) Definitions *********************/
+
+
+/************************** Function Prototypes ******************************/
+#if (!defined(DEBUG))
+extern void xil_printf(const char *format, ...);
+#endif
+
+
+/************************** Variable Definitions *****************************/
+/*Device instance definitions*/
+
+static XIic sIic;
+static XAxiDma sAxiDma;		/* Instance of the XAxiDma */
+static XIntc sIntc;
+static XGpio sUserIO;
+
+/*HDMI display and video Driver structs*/
+DisplayCtrl dispCtrl;
+XAxiVdma vdma;
+VideoCapture videoCapt;
+char fRefresh;
+
+typedef struct {
+    u32 burstCount;
+    u8  greenFound;
+    u8  redFound;
+    u8  frameDone;
+    u8  writeDone;
+} XCoordDMA_Status;
+
+/*Framebuffers for video data*/
+u8 frameBuf[DISPLAY_NUM_FRAMES][DEMO_MAX_FRAME];
+u8 *pFrames[DISPLAY_NUM_FRAMES]; //array of pointers to the frame buffers
+
+// Interrupt vector table
+const ivt_t ivt[] = {
+	{VID_GPIO_IRPT_ID, (XInterruptHandler)GpioIsr, &videoCapt},
+	{VID_VTC_IRPT_ID, (XInterruptHandler)XVtc_IntrHandler, &(videoCapt.vtc)},
+	//IIC
+	{XPAR_MICROBLAZE_0_AXI_INTC_AXI_IIC_0_IIC2INTC_IRPT_INTR, (XInterruptHandler)XIic_InterruptHandler, &sIic},
+	//DMA Stream to MemoryMap Interrupt handler
+	{XPAR_MICROBLAZE_0_AXI_INTC_AXI_DMA_0_S2MM_INTROUT_INTR, (XInterruptHandler)fnS2MMInterruptHandler, &sAxiDma},
+	//DMA MemoryMap to Stream Interrupt handler
+	{XPAR_MICROBLAZE_0_AXI_INTC_AXI_DMA_0_MM2S_INTROUT_INTR, (XInterruptHandler)fnMM2SInterruptHandler, &sAxiDma}
+};
+
+/*function to preload sound files*/
+void load_wav_to_ddr() {
+	unsigned char *ddr_ptr = (unsigned char *)MEM_BASE_ADDR;
+
+    for (int i = 0; i < sizeof(bass_drum_data); i++) {
+        ddr_ptr[i] = bass_drum_data[i];
+    	//ddr_ptr[i] = 0;
+    }
+    for (int j = 0; j < sizeof(cymbal_audio_data); j++) {
+            ddr_ptr[sizeof(bass_drum_data) + j] = cymbal_audio_data[j];
+    }
+    Xil_DCacheFlushRange((INTPTR)ddr_ptr, sizeof(bass_drum_data)+sizeof(cymbal_audio_data));
+}
+/*****************************************************************************/
+/**
+*
+* Main function
+*
+* This function is the main entry of the interrupt test. It does the following:
+*	Initialize the interrupt controller
+*	Initialize the IIC controller
+*	Initialize the User I/O driver
+*	Initialize the DMA engine
+*	Initialize the Audio I2S controller
+*	Enable the interrupts
+*	Wait for a button event then start selected task
+*	Wait for task to complete
+*
+* @param	None
+*
+* @return
+*		- XST_SUCCESS if example finishes successfully
+*		- XST_FAILURE if example fails.
+*
+* @note		None.
+*
+******************************************************************************/
+int main(void)
+{
+
+	int Status;
+	xil_printf("\r\n--- Entering main() --- \r\n");
+
+	float z_data=0.0; //0x12(L)-0x13(H)
+	float z_data1=0.0; //0x12(L)-0x13(H)
+	volatile int xCoor = 0;
+	u8 volume = 0xFF;
+
+	u8 acl2_status0 = 0;
+	u8 acl2_status1 = 0;
+
+	u32 mem_audio_start = (u32) MEM_BASE_ADDR;
+	u32 regXCoor = 0;
+	ACL2_SamplePacket dataRead1;
+
+	init_platform();
+	print("Finish init platform... \n\r");
+
+	//Initialize the interrupt controller
+
+	Status = fnInitInterruptController(&sIntc);
+	if(Status != XST_SUCCESS) {
+		xil_printf("Error initializing interrupts");
+		return XST_FAILURE;
+	}
+
+	// Initialize IIC controller
+	Status = fnInitIic(&sIic);
+	if(Status != XST_SUCCESS) {
+		xil_printf("Error initializing I2C controller");
+		return XST_FAILURE;
+	}
+
+	// Initialize User I/O driver
+	Status = fnInitUserIO(&sUserIO);
+	if(Status != XST_SUCCESS) {
+		xil_printf("User I/O ERROR");
+		return XST_FAILURE;
+	}
+
+	//Initialize DMA
+	Status = fnConfigDma(&sAxiDma);
+	if(Status != XST_SUCCESS) {
+		xil_printf("DMA configuration ERROR");
+		return XST_FAILURE;
+	}
+
+	//Initialize Audio I2S
+	Status = fnInitAudio();
+	if(Status != XST_SUCCESS) {
+		xil_printf("Audio initializing ERROR");
+		return XST_FAILURE;
+	}
+
+	// Enable all interrupts in our interrupt vector table
+	// Make sure all driver instances using interrupts are initialized first
+	fnEnableInterrupts(&sIntc, &ivt[0], sizeof(ivt)/sizeof(ivt[0]));
+
+	 /*setFrameBuffer for x-coordinate detection*/
+	*((volatile u32*) 0x44A5000C) = 0x90000000;
+
+	/*Initialize Hdmi*/
+	DemoInitialize();
+
+	/*Video streaming for current frame buffer*/
+	//	Status = DisplayStop(&dispCtrl);
+	//	DisplaySetMode(&dispCtrl, &VMODE_1280x720);
+	//	DisplayStart(&dispCtrl);
+	//VideoStart(&videoCapt);
+
+	/*Initialize Frame buffers colour -- draw black and two grey circles for all*/
+	for(int curframe=0; curframe<3; curframe++){
+		DisplayChangeFrame(&dispCtrl, curframe);
+		DisplayStop(&dispCtrl);
+		DisplaySetMode(&dispCtrl, &VMODE_1280x720);
+		DisplayStart(&dispCtrl);
+		DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 3);
+		DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 0);
+	}
+	DisplayChangeFrame(&dispCtrl, 1);
+	DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 1);
+	DisplayChangeFrame(&dispCtrl, 2);
+	DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 4);
+	DisplayChangeFrame(&dispCtrl, 0);
+
+	/*Preload drum sound data to memory*/
+	load_wav_to_ddr();
+	fnSetHpOutput(volume); //set output volume
+
+	/*Check ACL2 status*/
+	print("START READING DATA... \n\r");
+	acl2_status1 = ACL2_getStatus(&accelerometer1);
+	usleep(1000);
+	acl2_status0 = ACL2_getStatus(&accelerometer0);
+	printf("status0: %d\r\n", acl2_status0);
+	printf("status1: %d\r\n", acl2_status1);
+
+    while(1) {
+    	/*Polling acceleration data from ACL2s*/
+    	if(((ACL2_STATUS_DATA_READY_MASK & acl2_status0) != 0)){
+			dataRead1 = ACL2_getSample(&accelerometer0);
+			z_data = ACL2_DataToG(&accelerometer0, dataRead1.ZData);
+			//printf("X0: %.2f \tY0: %.2f \tZ0: %.2f\r\n", x_data, y_data, z_data);
+		}
+    	if(((ACL2_STATUS_DATA_READY_MASK & acl2_status1) != 0)){
+			dataRead1 = ACL2_getSample(&accelerometer1);
+			z_data1 = ACL2_DataToG(&accelerometer1, dataRead1.ZData);
+			//printf("X1: %.2f \tY0: %.2f \tZ0: %.2f\r\n", x_data, y_data, z_data);
+		}
+
+    	if (Demo.fDmaMM2SEvent)
+		{
+			xil_printf("\r\nPlayback Done...");
+			// Disable Stream function to send data (S2MM)
+			Xil_Out32(I2S_STREAM_CONTROL_REG, 0x00000000);
+			Xil_Out32(I2S_TRANSFER_CONTROL_REG, 0x00000000);
+			//Flush cache
+			microblaze_flush_dcache();
+			microblaze_invalidate_dcache();
+			// Reset MM2S event and playback flag
+			Demo.fDmaMM2SEvent = 0;
+			Demo.fAudioPlayback = 0;
+		}
+
+		// Checking the DMA Error event flag
+		if (Demo.fDmaError)
+		{
+			xil_printf("\r\nDma Error...");
+			xil_printf("\r\nDma Reset...");
+			Demo.fDmaError = 0;
+			Demo.fAudioPlayback = 0;
+			Demo.fAudioRecord = 0;
+		}
+		/*After Accelerometer 0 trigger a hit, output sound and hdmi output accordingly*/
+    	if(!Demo.fAudioPlayback && (z_data > 2)){
+    		xil_printf("Hit0 Detected...\r\n");
+    		DisplayChangeFrame(&dispCtrl, 2); //Switch frame
+    		/*sound generation started*/
+    		union ubitField uTransferVariable;
+    		uTransferVariable.l = XAxiDma_SimpleTransfer(&sAxiDma, mem_audio_start, sizeof(bass_drum_data)/sizeof(int16_t), XAXIDMA_DMA_TO_DEVICE);
+
+    		/*pixel detection*/
+    		volatile u32* cmd_reg_addr = (volatile u32*) 0x44A5000C; // XCoord DMA START register. Slave Register 3.
+			volatile u32* status_reg_addr = (volatile u32*) 0x44A50008; // XCoord DMA STATUS register. Slave Register 2.
+
+			*cmd_reg_addr = 0x1; // Start DMA
+			while (((*cmd_reg_addr) & 0x200)==0); // Poll status register
+			u32 status_val = *status_reg_addr;
+			if ((status_val & 0xFFF) < 640) {
+				// Play sound 1.
+				uTransferVariable.l = XAxiDma_SimpleTransfer(&sAxiDma, mem_audio_start, sizeof(bass_drum_data)/sizeof(int16_t), XAXIDMA_DMA_TO_DEVICE);
+			} else {
+				// Play sound 2.
+				uTransferVariable.l = XAxiDma_SimpleTransfer(&sAxiDma, ((u32) MEM_BASE_ADDR  + sizeof(bass_drum_data)), sizeof(bass_drum_data)/sizeof(int16_t), XAXIDMA_DMA_TO_DEVICE);
+			}
+			/*pixel detection ends*/
+
+
+    		// Send number of samples to record
+    		Xil_Out32(I2S_PERIOD_COUNT_REG, sizeof(bass_drum_data)/sizeof(int16_t));
+    		// Start i2s initialization sequence
+    		uTransferVariable.l = 0x00000000;
+    		Xil_Out32(I2S_TRANSFER_CONTROL_REG, uTransferVariable.l);
+    		uTransferVariable.bit.u32bit0 = 1;
+    		Xil_Out32(I2S_TRANSFER_CONTROL_REG, uTransferVariable.l);
+    		// Enable Stream function to send data (MM2S)
+    		Xil_Out32(I2S_STREAM_CONTROL_REG, 0x00000002);
+    		/*sound generation ends*/
+
+    		usleep(2000);
+    		/*Change back to default frame buffer*/
+    		DisplayChangeFrame(&dispCtrl, 0);
+    	}
+
+    	/*After Accelerometer 1 trigger a hit, output sound and hdmi output accordingly*/
+    	if(!Demo.fAudioPlayback && (z_data1 > 2)){
+			xil_printf("Hit1 Detected...\r\n");
+
+			DisplayChangeFrame(&dispCtrl, 1);
+
+			union ubitField uTransferVariable;
+			uTransferVariable.l = XAxiDma_SimpleTransfer(&sAxiDma, ((u32) MEM_BASE_ADDR  + sizeof(bass_drum_data)), sizeof(bass_drum_data)/sizeof(int16_t), XAXIDMA_DMA_TO_DEVICE);
+
+
+//			//usleep(200000);
+			/*pixel detection*/
+			volatile u32* cmd_reg_addr = (volatile u32*) 0x44A5000C; // XCoord DMA START register. Slave Register 3.
+			volatile u32* status_reg_addr = (volatile u32*) 0x44A50008; // XCoord DMA STATUS register. Slave Register 2.
+
+			*cmd_reg_addr = 0x1; // Start DMA
+			while (((*cmd_reg_addr) & 0x200)==0); // Poll status register
+			u32 status_val = *status_reg_addr;
+			if (((status_val & 0xFFF000) >> 12) < 640) {
+				// Play sound 1.
+				uTransferVariable.l = XAxiDma_SimpleTransfer(&sAxiDma, mem_audio_start, sizeof(bass_drum_data)/sizeof(int16_t), XAXIDMA_DMA_TO_DEVICE);
+			} else {
+				// Play sound 2.
+				uTransferVariable.l = XAxiDma_SimpleTransfer(&sAxiDma, ((u32) MEM_BASE_ADDR  + sizeof(bass_drum_data)), sizeof(bass_drum_data)/sizeof(int16_t), XAXIDMA_DMA_TO_DEVICE);
+			}
+			xil_printf("REG0x00C: %u\r\n", *cmd_reg_addr);
+			xil_printf("REG0x008: %u\r\n", status_val);
+			/*pixel detection ends*/
+
+
+			// Send number of samples to record
+			Xil_Out32(I2S_PERIOD_COUNT_REG, sizeof(bass_drum_data)/sizeof(int16_t));
+			// Start i2s initialization sequence
+			uTransferVariable.l = 0x00000000;
+			Xil_Out32(I2S_TRANSFER_CONTROL_REG, uTransferVariable.l);
+			uTransferVariable.bit.u32bit0 = 1;
+			Xil_Out32(I2S_TRANSFER_CONTROL_REG, uTransferVariable.l);
+			// Enable Stream function to send data (MM2S)
+			Xil_Out32(I2S_STREAM_CONTROL_REG, 0x00000002);
+
+			DisplayChangeFrame(&dispCtrl, 0);
+		}
+
+
+    	usleep(20000);
+    }
+
+	xil_printf("\r\n--- Exiting main() --- \r\n");
+
+
+	return XST_SUCCESS;
+
+}
+
+void DemoInitialize()
+{
+	int Status;
+	XAxiVdma_Config *vdmaConfig;
+	int i;
+	/*Initialize an array of pointers to the 3 frame buffers*/
+	for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
+	{
+		//pFrames[i] = frameBuf[i];
+		pFrames[i] = (u8 *)(0x90000000 + i * 0x1000000);
+	}
+
+	/*
+	 * Initialize VDMA driver
+	 */
+	vdmaConfig = XAxiVdma_LookupConfig(VGA_VDMA_ID);
+	if (!vdmaConfig)
+	{
+		xil_printf("No video DMA found for ID %d\r\n", VGA_VDMA_ID);
+		return;
+	}
+	Status = XAxiVdma_CfgInitialize(&vdma, vdmaConfig, vdmaConfig->BaseAddress);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("VDMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	/*
+	 * Initialize the Display controller and start it
+	 */
+	Status = DisplayInitialize(&dispCtrl, &vdma, DISP_VTC_ID, DYNCLK_BASEADDR, pFrames, DEMO_STRIDE);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Display Ctrl initialization failed during demo initialization%d\r\n", Status);
+		return;
+	}
+	Status = DisplayStart(&dispCtrl);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Couldn't start display during demo initialization%d\r\n", Status);
+		return;
+	}
+
+	/*
+	 * Initialize the Interrupt controller and start it.
+	 */
+//	Status = fnInitInterruptController(&sIntc);
+//	if(Status != XST_SUCCESS) {
+//		xil_printf("Error initializing interrupts");
+//		return;
+//	}
+//	fnEnableInterrupts(&sIntc, &ivt[0], sizeof(ivt)/sizeof(ivt[0]));
+
+	/*
+	 * Initialize the Video Capture device
+	 */
+	Status = VideoInitialize(&videoCapt, &sIntc, &vdma, VID_GPIO_ID, VID_VTC_ID, VID_VTC_IRPT_ID, pFrames, DEMO_STRIDE, DEMO_START_ON_DET);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Video Ctrl initialization failed during demo initialization%d\r\n", Status);
+		return;
+	}
+
+	/*
+	 * Set the Video Detect callback to trigger the menu to reset, displaying the new detected resolution
+	 */
+	VideoSetCallback(&videoCapt, DemoISR, &fRefresh);
+
+	//DemoPrintTest(dispCtrl.framePtr[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, dispCtrl.stride, DEMO_PATTERN_1);
+
+	return;
+}
+
+void DemoRun()
+{
+	int nextFrame = 0;
+	char userInput = 0;
+	u32 locked;
+	XGpio *GpioPtr = &videoCapt.gpio;
+
+	/* Flush UART FIFO */
+	while (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
+	{
+		XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
+	}
+	while (userInput != 'q')
+	{
+		fRefresh = 0;
+		DemoPrintMenu();
+
+		/* Wait for data on UART */
+		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh)
+		{}
+
+		/* Store the first character in the UART receive FIFO and echo it */
+		if (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
+		{
+			userInput = XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
+			xil_printf("%c", userInput);
+		}
+		else  //Refresh triggered by video detect interrupt
+		{
+			userInput = 'r';
+		}
+
+		switch (userInput)
+		{
+		case '1':
+			DemoChangeRes();
+			break;
+		case '2':
+			nextFrame = dispCtrl.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			break;
+		case '3':
+			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_0);
+			break;
+		case '4':
+			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_1);
+			break;
+		case '5':
+			if (videoCapt.state == VIDEO_STREAMING)
+				VideoStop(&videoCapt);
+			else
+				VideoStart(&videoCapt);
+			break;
+		case '6':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoChangeFrame(&videoCapt, nextFrame);
+			break;
+		case '7':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoInvertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			break;
+		case '8':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoScaleFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			break;
+		case 'q':
+			break;
+		case 'r':
+			locked = XGpio_DiscreteRead(GpioPtr, 2);
+			xil_printf("%d", locked);
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			usleep(50000);
+		}
+	}
+
+	return;
+}
+
+void DemoPrintMenu()
+{
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+	xil_printf("**************************************************\n\r");
+	xil_printf("*             Nexys Video HDMI Demo              *\n\r");
+	xil_printf("**************************************************\n\r");
+	xil_printf("*Display Resolution: %28s*\n\r", dispCtrl.vMode.label);
+	printf("*Display Pixel Clock Freq. (MHz): %15.3f*\n\r", dispCtrl.pxlFreq);
+	xil_printf("*Display Frame Index: %27d*\n\r", dispCtrl.curFrame);
+	if (videoCapt.state == VIDEO_DISCONNECTED) xil_printf("*Video Capture Resolution: %22s*\n\r", "!HDMI UNPLUGGED!");
+	else xil_printf("*Video Capture Resolution: %17dx%-4d*\n\r", videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo);
+	xil_printf("*Video Frame Index: %29d*\n\r", videoCapt.curFrame);
+	xil_printf("**************************************************\n\r");
+	xil_printf("\n\r");
+	xil_printf("1 - Change Display Resolution\n\r");
+	xil_printf("2 - Change Display Framebuffer Index\n\r");
+	xil_printf("3 - Print Blended Test Pattern to Display Framebuffer\n\r");
+	xil_printf("4 - Print Color Bar Test Pattern to Display Framebuffer\n\r");
+	xil_printf("5 - Start/Stop Video stream into Video Framebuffer\n\r");
+	xil_printf("6 - Change Video Framebuffer Index\n\r");
+	xil_printf("7 - Grab Video Frame and invert colors\n\r");
+	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
+	xil_printf("q - Quit\n\r");
+	xil_printf("\n\r");
+	xil_printf("\n\r");
+	xil_printf("Enter a selection:");
+}
+
+void DemoChangeRes()
+{
+	int fResSet = 0;
+	int status;
+	char userInput = 0;
+
+	/* Flush UART FIFO */
+	while (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
+		{
+			XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
+		}
+
+	while (!fResSet)
+	{
+		DemoCRMenu();
+
+		/* Wait for data on UART */
+		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh)
+		{}
+
+		/* Store the first character in the UART recieve FIFO and echo it */
+
+		userInput = XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+		switch (userInput)
+		{
+		case '1':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_640x480);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '2':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_800x600);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '3':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_1280x720);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '4':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_1280x1024);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case '5':
+			status = DisplayStop(&dispCtrl);
+			DisplaySetMode(&dispCtrl, &VMODE_1920x1080);
+			DisplayStart(&dispCtrl);
+			fResSet = 1;
+			break;
+		case 'q':
+			fResSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			usleep(50000);
+		}
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
+}
+
+void DemoCRMenu()
+{
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+	xil_printf("**************************************************\n\r");
+	xil_printf("*             Nexys Video HDMI Demo              *\n\r");
+	xil_printf("**************************************************\n\r");
+	xil_printf("*Current Resolution: %28s*\n\r", dispCtrl.vMode.label);
+	printf("*Pixel Clock Freq. (MHz): %23.3f*\n\r", dispCtrl.pxlFreq);
+	xil_printf("**************************************************\n\r");
+	xil_printf("\n\r");
+	xil_printf("1 - %s\n\r", VMODE_640x480.label);
+	xil_printf("2 - %s\n\r", VMODE_800x600.label);
+	xil_printf("3 - %s\n\r", VMODE_1280x720.label);
+	xil_printf("4 - %s\n\r", VMODE_1280x1024.label);
+	xil_printf("5 - %s\n\r", VMODE_1920x1080.label);
+	xil_printf("q - Quit (don't change resolution)\n\r");
+	xil_printf("\n\r");
+	xil_printf("Select a new resolution:");
+}
+
+void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 xcoi, ycoi;
+	u32 lineStart = 0;
+	for(ycoi = 0; ycoi < height; ycoi++)
+	{
+		for(xcoi = 0; xcoi < (width * 3); xcoi+=3)
+		{
+			destFrame[xcoi + lineStart] = ~srcFrame[xcoi + lineStart];         //Red
+			destFrame[xcoi + lineStart + 1] = ~srcFrame[xcoi + lineStart + 1]; //Blue
+			destFrame[xcoi + lineStart + 2] = ~srcFrame[xcoi + lineStart + 2]; //Green
+		}
+		lineStart += stride;
+	}
+	/*
+	 * Flush the framebuffer memory range to ensure changes are written to the
+	 * actual memory, and therefore accessible by the VDMA.
+	 */
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}
+
+
+/*
+ * Bilinear interpolation algorithm. Assumes both frames have the same stride.
+ */
+void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+{
+	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
+	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
+	float x1y1, x2y1, x1y2, x2y2; //Used to store the color data of the four nearest source pixels to the destination pixel
+	int ix1y1, ix2y1, ix1y2, ix2y2; //indexes into the source frame for the four nearest source pixels to the destination pixel
+	float xDist, yDist; //distances between destination pixel and x1y1 source pixels in source frame coordinate system
+
+	int xcoDest, ycoDest; // Location of the destination pixel being operated on in the destination coordinate system
+	int iy1; //Used to store the index of the first source pixel in the line with y1
+	int iDest; //index of the pixel data in the destination frame being operated on
+
+	int i;
+
+	xInc = ((float) srcWidth - 1.0) / ((float) destWidth);
+	yInc = ((float) srcHeight - 1.0) / ((float) destHeight);
+
+	ycoSrc = 0.0;
+	for (ycoDest = 0; ycoDest < destHeight; ycoDest++)
+	{
+		iy1 = ((int) ycoSrc) * stride;
+		yDist = ycoSrc - ((float) ((int) ycoSrc));
+
+		/*
+		 * Save some cycles in the loop below by presetting the destination
+		 * index to the first pixel in the current line
+		 */
+		iDest = ycoDest * stride;
+
+		xcoSrc = 0.0;
+		for (xcoDest = 0; xcoDest < destWidth; xcoDest++)
+		{
+			ix1y1 = iy1 + ((int) xcoSrc) * 3;
+			ix2y1 = ix1y1 + 3;
+			ix1y2 = ix1y1 + stride;
+			ix2y2 = ix1y1 + stride + 3;
+
+			xDist = xcoSrc - ((float) ((int) xcoSrc));
+
+			/*
+			 * For loop handles all three colors
+			 */
+			for (i = 0; i < 3; i++)
+			{
+				x1y1 = (float) srcFrame[ix1y1 + i];
+				x2y1 = (float) srcFrame[ix2y1 + i];
+				x1y2 = (float) srcFrame[ix1y2 + i];
+				x2y2 = (float) srcFrame[ix2y2 + i];
+
+				/*
+				 * Bilinear interpolation function
+				 */
+				destFrame[iDest] = (u8) ((1.0-yDist)*((1.0-xDist)*x1y1+xDist*x2y1) + yDist*((1.0-xDist)*x1y2+xDist*x2y2));
+				iDest++;
+			}
+			xcoSrc += xInc;
+		}
+		ycoSrc += yInc;
+	}
+
+	/*
+	 * Flush the framebuffer memory range to ensure changes are written to the
+	 * actual memory, and therefore accessible by the VDMA.
+	 */
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+
+	return;
+}
+
+void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
+{
+	u32 xcoi, ycoi;
+	u32 iPixelAddr;
+	u8 wRed, wBlue, wGreen;
+	u32 wCurrentInt;
+	double fRed, fBlue, fGreen, fColor;
+	u32 xLeft, xMid, xRight, xInt;
+	u32 yMid, yInt;
+	double xInc, yInc;
+
+    int radius1 = 100;
+    int radius2 = 100;
+    int xCenter1 = width/3;
+    int xCenter2 = (2*width)/3;
+    int yCenter = (3 * height) / 4;
+
+    u8 redVal;
+    u8 blueVal = 0;
+    u8 greenVal;
+
+    int x, y;
+
+	switch (pattern)
+	{
+	case DEMO_PATTERN_0:
+
+	    for (y = 0; y < (int)height; y++)
+	    {
+	        // Calculate the start of this row in the frame buffer
+	        u32 rowStart = y * stride;
+
+	        for (x = 0; x < (int)width; x++)
+	        {
+	            // Index in the frame buffer (remember 3 bytes/pixel -> R,B,G)
+	            u32 index = rowStart + (x * 3);
+
+	            // Compute squared distances from each circle’s center
+	            int dx1 = x - xCenter1;
+	            int dy1 = y - yCenter;
+	            int dx2 = x - xCenter2;
+	            int dy2 = y - yCenter;
+
+	            int distSq1 = dx1*dx1 + dy1*dy1;
+	            int distSq2 = dx2*dx2 + dy2*dy2;
+
+	            if (distSq1 <= radius1*radius1 || distSq2 <= radius2*radius2)
+	            {
+	                // If inside either circle, overwrite with the chosen color
+	                frame[index + 0] = 234;    // R
+	                frame[index + 1] = 238;   // B
+	                frame[index + 2] = 237;  // G
+	            }
+	            // else do nothing -> leaves original video pixel alone
+	        }
+	    }
+		/*
+		 * Flush the framebuffer memory range to ensure changes are written to the
+		 * actual memory, and therefore accessible by the VDMA.
+		 */
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+		break;
+	case DEMO_PATTERN_1:
+
+	    for (y = 0; y < (int)height; y++)
+	    {
+	        // Calculate the start of this row in the frame buffer
+	        u32 rowStart = y * stride;
+
+	        for (x = 0; x < (int)width; x++)
+	        {
+	            // Index in the frame buffer (remember 3 bytes/pixel -> R,B,G)
+	            u32 index = rowStart + (x * 3);
+
+	            // Compute squared distances from each circle’s center
+	            int dx1 = x - xCenter1;
+	            int dy1 = y - yCenter;
+	            int dx2 = x - xCenter2;
+	            int dy2 = y - yCenter;
+
+	            int distSq1 = dx1*dx1 + dy1*dy1;
+	            int distSq2 = dx2*dx2 + dy2*dy2;
+
+	            if (distSq1 <= radius1*radius1)
+	            {
+	                // If inside either circle, overwrite with the chosen color
+	                frame[index + 0] = 255;    // R
+	                frame[index + 1] = 0;   // B
+	                frame[index + 2] = 0;  // G
+	            }
+	            // else do nothing -> leaves original video pixel alone
+	        }
+	    }
+		/*
+		 * Flush the framebuffer memory range to ensure changes are written to the
+		 * actual memory, and therefore accessible by the VDMA.
+		 */
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+		break;
+	case 3:
+
+		xInt = width / 7; //Seven intervals, each with width/7 pixels
+		xInc = 256.0 / ((double) xInt); //256 color intensities per interval. Notice that overflow is handled for this pattern.
+
+		fColor = 0.0;
+		wCurrentInt = 1;
+		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		{
+			iPixelAddr = xcoi;
+
+			for(ycoi = 0; ycoi < height; ycoi++)
+			{
+				frame[iPixelAddr] = 0;
+				frame[iPixelAddr + 1] = 0;
+				frame[iPixelAddr + 2] = 0;
+				/*
+				 * This pattern is printed one vertical line at a time, so the address must be incremented
+				 * by the stride instead of just 1.
+				 */
+				iPixelAddr += stride;
+			}
+
+			fColor += xInc;
+			if (fColor >= 256.0)
+			{
+				fColor = 0.0;
+				wCurrentInt++;
+			}
+		}
+		/*
+		 * Flush the framebuffer memory range to ensure changes are written to the
+		 * actual memory, and therefore accessible by the VDMA.
+		 */
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+		break;
+	case 4:
+
+	    for (y = 0; y < (int)height; y++)
+	    {
+	        // Calculate the start of this row in the frame buffer
+	        u32 rowStart = y * stride;
+
+	        for (x = 0; x < (int)width; x++)
+	        {
+	            // Index in the frame buffer (remember 3 bytes/pixel -> R,B,G)
+	            u32 index = rowStart + (x * 3);
+
+	            // Compute squared distances from each circle’s center
+	            int dx1 = x - xCenter1;
+	            int dy1 = y - yCenter;
+	            int dx2 = x - xCenter2;
+	            int dy2 = y - yCenter;
+
+	            int distSq1 = dx1*dx1 + dy1*dy1;
+	            int distSq2 = dx2*dx2 + dy2*dy2;
+
+	            if (distSq2 <= radius2*radius2)
+	            {
+	                // If inside either circle, overwrite with the chosen color
+	                frame[index + 0] = 255;    // R
+	                frame[index + 1] = 0;   // B
+	                frame[index + 2] = 0;  // G
+	            }
+	            // else do nothing -> leaves original video pixel alone
+	        }
+	    }
+		/*
+		 * Flush the framebuffer memory range to ensure changes are written to the
+		 * actual memory, and therefore accessible by the VDMA.
+		 */
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+		break;
+	default :
+		xil_printf("Error: invalid pattern passed to DemoPrintTest");
+	}
+}
+
+void DemoISR(void *callBackRef, void *pVideo)
+{
+	char *data = (char *) callBackRef;
+	*data = 1; //set fRefresh to 1
+}
+
+
+
+
+
+

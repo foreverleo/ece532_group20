@@ -1,0 +1,73 @@
+11:56:53 **** Auto Build of configuration Debug for project acl2_audio_v1 ****
+make all 
+'Building file: ../src/userio/userio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/userio/userio.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/userio/userio.d" -MT"src/userio/userio.o" -o "src/userio/userio.o" "../src/userio/userio.c"
+'Finished building: ../src/userio/userio.c'
+' '
+'Building file: ../src/intc/intc.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+'Finished building: ../src/intc/intc.c'
+' '
+'Building file: ../src/iic/iic.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic/iic.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic/iic.d" -MT"src/iic/iic.o" -o "src/iic/iic.o" "../src/iic/iic.c"
+'Finished building: ../src/iic/iic.c'
+' '
+'Building file: ../src/dma/dma.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma/dma.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dma/dma.d" -MT"src/dma/dma.o" -o "src/dma/dma.o" "../src/dma/dma.c"
+'Finished building: ../src/dma/dma.c'
+' '
+'Building file: ../src/audio/audio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio/audio.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio/audio.d" -MT"src/audio/audio.o" -o "src/audio/audio.o" "../src/audio/audio.c"
+'Finished building: ../src/audio/audio.c'
+' '
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:254:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:253:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:252:5: warning: unused variable 'acl2_status1' [-Wunused-variable]
+  u8 acl2_status1 = 0;
+     ^~~~~~~~~~~~
+../src/demo.c:248:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:247:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:245:8: warning: variable 'y_data' set but not used [-Wunused-but-set-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:244:8: warning: variable 'x_data' set but not used [-Wunused-but-set-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+'Finished building: ../src/demo.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../acl2_audio_v1_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: acl2_audio_v1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../acl2_audio_v1_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "acl2_audio_v1.elf"  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dma/dma.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: acl2_audio_v1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size acl2_audio_v1.elf  |tee "acl2_audio_v1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 634628	   1744	   5540	 641912	  9cb78	acl2_audio_v1.elf
+'Finished building: acl2_audio_v1.elf.size'
+' '
+
+11:57:11 Build Finished (took 17s.370ms)
+

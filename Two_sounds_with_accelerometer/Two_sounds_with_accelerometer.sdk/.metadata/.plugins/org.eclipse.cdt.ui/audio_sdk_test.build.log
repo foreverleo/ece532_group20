@@ -1,0 +1,6 @@
+17:42:05 **** Incremental Build of configuration Debug for project audio_sdk_test ****
+make all 
+make: Nothing to be done for 'all'.
+
+17:42:06 Build Finished (took 291ms)
+

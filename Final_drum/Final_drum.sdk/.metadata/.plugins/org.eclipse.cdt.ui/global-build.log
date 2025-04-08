@@ -1,0 +1,3511 @@
+07:00:27 **** Build of project drum_v5_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/axidma_v9_8/src"
+make -C microblaze_0/libsrc/axidma_v9_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/axivdma_v6_6/src"
+make -C microblaze_0/libsrc/axivdma_v6_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/PmodACL2_v1_0/src"
+make -C microblaze_0/libsrc/PmodACL2_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/vtc_v8_0/src"
+make -C microblaze_0/libsrc/vtc_v8_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/axidma_v9_8/src"
+make -C microblaze_0/libsrc/axidma_v9_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axidma"
+mb-ar: creating ../../../lib/libxil.a
+"Running Make libs in microblaze_0/libsrc/axivdma_v6_6/src"
+make -C microblaze_0/libsrc/axivdma_v6_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axivdma"
+"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling iic"
+"Running Make libs in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/PmodACL2_v1_0/src"
+make -C microblaze_0/libsrc/PmodACL2_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling PmodACL2"
+"Running Make libs in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tmrctr"
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+"Running Make libs in microblaze_0/libsrc/vtc_v8_0/src"
+make -C microblaze_0/libsrc/vtc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling video timing controller"
+'Finished building libraries'
+
+**** Build of configuration Debug for project drum_v5 ****
+
+Nothing to build for project drum_v5
+07:01:24 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+'Finished building: ../src/video_capture/video_capture.c'
+' '
+'Building file: ../src/userio/userio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/userio/userio.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/userio/userio.d" -MT"src/userio/userio.o" -o "src/userio/userio.o" "../src/userio/userio.c"
+'Finished building: ../src/userio/userio.c'
+' '
+'Building file: ../src/intc/intc.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+'Finished building: ../src/intc/intc.c'
+' '
+'Building file: ../src/iic/iic.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic/iic.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic/iic.d" -MT"src/iic/iic.o" -o "src/iic/iic.o" "../src/iic/iic.c"
+'Finished building: ../src/iic/iic.c'
+' '
+'Building file: ../src/dynclk/dynclk.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+'Finished building: ../src/dynclk/dynclk.c'
+' '
+'Building file: ../src/dma/dma.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma/dma.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dma/dma.d" -MT"src/dma/dma.o" -o "src/dma/dma.o" "../src/dma/dma.c"
+'Finished building: ../src/dma/dma.c'
+' '
+'Building file: ../src/display_ctrl/display_ctrl.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+'Finished building: ../src/display_ctrl/display_ctrl.c'
+' '
+'Building file: ../src/audio/audio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio/audio.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio/audio.d" -MT"src/audio/audio.o" -o "src/audio/audio.o" "../src/audio/audio.c"
+'Finished building: ../src/audio/audio.c'
+' '
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c:22:10: fatal error: xcoord_dma.h: No such file or directory
+ #include "xcoord_dma.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:26: src/demo.o] Error 1
+07:02:18 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'XCoordDMA_GetStatus':
+../src/demo.c:163:18: warning: implicit declaration of function 'XCOORD_DMA_mReadReg'; did you mean 'XAxiDma_ReadReg'? [-Wimplicit-function-declaration]
+     u32 regVal = XCOORD_DMA_mReadReg(XPAR_XCOORD_DMA_0_S00_AXI_BASEADDR, XCOORD_DMA_S00_AXI_SLV_REG3_OFFSET);
+                  ^~~~~~~~~~~~~~~~~~~
+                  XAxiDma_ReadReg
+../src/demo.c:163:74: error: 'XCOORD_DMA_S00_AXI_SLV_REG3_OFFSET' undeclared (first use in this function)
+     u32 regVal = XCOORD_DMA_mReadReg(XPAR_XCOORD_DMA_0_S00_AXI_BASEADDR, XCOORD_DMA_S00_AXI_SLV_REG3_OFFSET);
+                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/demo.c:163:74: note: each undeclared identifier is reported only once for each function it appears in
+../src/demo.c: In function 'main':
+../src/demo.c:284:2: warning: implicit declaration of function 'XCOORD_DMA_mWriteReg'; did you mean 'XAxiDma_WriteReg'? [-Wimplicit-function-declaration]
+  XCOORD_DMA_mWriteReg(XPAR_XCOORD_DMA_0_S00_AXI_BASEADDR, XCOORD_DMA_S00_AXI_SLV_REG0_OFFSET, 0x90000000); //setFrameBuffer
+  ^~~~~~~~~~~~~~~~~~~~
+  XAxiDma_WriteReg
+../src/demo.c:284:59: error: 'XCOORD_DMA_S00_AXI_SLV_REG0_OFFSET' undeclared (first use in this function)
+  XCOORD_DMA_mWriteReg(XPAR_XCOORD_DMA_0_S00_AXI_BASEADDR, XCOORD_DMA_S00_AXI_SLV_REG0_OFFSET, 0x90000000); //setFrameBuffer
+                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:230:5: warning: unused variable 'acl2_status1' [-Wunused-variable]
+  u8 acl2_status1 = 0;
+     ^~~~~~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'z_data1' [-Wunused-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:932:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1004:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:870:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:869:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:868:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:860:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:859:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:859:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:858:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:858:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:858:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:857:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:857:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:857:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:855:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:855:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:855:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+make: *** [src/subdir.mk:26: src/demo.o] Error 1
+07:02:45 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:284:2: warning: implicit declaration of function 'XCOORD_DMA_mWriteReg'; did you mean 'XAxiDma_WriteReg'? [-Wimplicit-function-declaration]
+  XCOORD_DMA_mWriteReg(XPAR_XCOORD_DMA_0_S00_AXI_BASEADDR, XCOORD_DMA_S00_AXI_SLV_REG0_OFFSET, 0x90000000); //setFrameBuffer
+  ^~~~~~~~~~~~~~~~~~~~
+  XAxiDma_WriteReg
+../src/demo.c:284:59: error: 'XCOORD_DMA_S00_AXI_SLV_REG0_OFFSET' undeclared (first use in this function)
+  XCOORD_DMA_mWriteReg(XPAR_XCOORD_DMA_0_S00_AXI_BASEADDR, XCOORD_DMA_S00_AXI_SLV_REG0_OFFSET, 0x90000000); //setFrameBuffer
+                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/demo.c:284:59: note: each undeclared identifier is reported only once for each function it appears in
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:230:5: warning: unused variable 'acl2_status1' [-Wunused-variable]
+  u8 acl2_status1 = 0;
+     ^~~~~~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'z_data1' [-Wunused-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:932:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1004:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:870:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:869:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:868:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:860:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:859:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:859:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:858:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:858:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:858:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:857:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:857:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:857:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:855:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:855:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:855:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+make: *** [src/subdir.mk:26: src/demo.o] Error 1
+07:02:56 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:230:5: warning: unused variable 'acl2_status1' [-Wunused-variable]
+  u8 acl2_status1 = 0;
+     ^~~~~~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'z_data1' [-Wunused-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:932:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1004:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:870:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:869:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:868:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:860:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:859:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:859:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:858:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:858:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:858:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:857:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:857:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:857:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:855:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:855:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:855:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 656680	   1936	18671120	19329736	126f2c8	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:03:07 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:230:5: warning: unused variable 'acl2_status1' [-Wunused-variable]
+  u8 acl2_status1 = 0;
+     ^~~~~~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'z_data1' [-Wunused-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:932:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1004:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:870:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:869:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:868:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:860:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:859:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:859:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:858:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:858:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:858:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:857:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:857:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:857:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:855:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:855:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:855:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 655444	   1936	18671124	19328504	126edf8	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:03:15 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:03:24 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:230:5: warning: unused variable 'acl2_status1' [-Wunused-variable]
+  u8 acl2_status1 = 0;
+     ^~~~~~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'z_data1' [-Wunused-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:927:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:999:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:865:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:864:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:863:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:855:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:854:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:854:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:853:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:853:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:853:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:852:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:852:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:852:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:850:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:850:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:850:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659056	   1936	18671120	19332112	126fc10	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:03:32 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:03:44 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659144	   1936	18671120	19332200	126fc68	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:03:46 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659144	   1936	18671120	19332200	126fc68	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:03:54 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'z_data1' [-Wunused-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:927:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:999:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:865:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:864:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:863:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:855:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:854:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:854:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:853:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:853:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:853:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:852:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:852:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:852:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:850:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:850:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:850:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659212	   1936	18671124	19332272	126fcb0	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:04:10 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: variable 'z_data1' set but not used [-Wunused-but-set-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:927:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:999:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:865:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:864:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:863:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:855:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:854:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:854:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:853:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:853:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:853:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:852:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:852:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:852:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:850:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:850:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:850:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659312	   1936	18671120	19332368	126fd10	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:04:22 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: variable 'z_data1' set but not used [-Wunused-but-set-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:927:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:999:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:865:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:864:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:863:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:855:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:854:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:854:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:853:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:853:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:853:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:852:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:852:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:852:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:850:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:850:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:850:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659164	   1936	18671124	19332224	126fc80	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:04:46 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: variable 'z_data1' set but not used [-Wunused-but-set-variable]
+  float z_data1=0.0; //0x12(L)-0x13(H)
+        ^~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:926:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:998:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:864:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:863:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:862:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:854:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:853:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:853:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:852:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:852:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:852:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:851:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:851:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:851:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:849:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:849:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:849:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659164	   1936	18671124	19332224	126fc80	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:05:07 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:926:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:998:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:864:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:863:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:862:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:854:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:853:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:853:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:852:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:852:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:852:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:851:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:851:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:851:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:849:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:849:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:849:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659428	   1936	18671124	19332488	126fd88	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:05:16 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:07:15 **** Incremental Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:11:35 **** Incremental Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:12:54 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:926:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:998:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:864:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:863:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:862:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:854:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:853:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:853:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:852:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:852:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:852:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:851:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:851:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:851:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:849:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:849:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:849:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659524	   1936	18671124	19332584	126fde8	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:13:03 **** Incremental Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:14:38 **** Incremental Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+07:19:32 **** Incremental Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:926:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:998:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:864:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:863:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:862:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:854:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:853:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:853:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:852:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:852:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:852:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:851:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:851:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:851:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:849:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:849:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:849:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660416	   1936	18671120	19333472	1270160	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:28:31 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c:22:10: fatal error: xcoord_dma.h: No such file or directory
+ #include "xcoord_dma.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:26: src/demo.o] Error 1
+07:29:12 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:233:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:231:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:230:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:225:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:223:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:221:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:220:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:925:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:997:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:863:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:862:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:861:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:853:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:852:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:852:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:851:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:851:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:851:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:850:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:850:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:850:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:848:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:848:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:848:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660416	   1936	18671120	19333472	1270160	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+07:34:04 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:926:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:998:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:864:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:863:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:862:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:854:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:853:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:853:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:852:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:852:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:852:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:851:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:851:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:851:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:849:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:849:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:849:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660432	   1936	18671120	19333488	1270170	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+10:15:40 **** Auto Build of project drum_v5_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/axidma_v9_8/src"
+make -C microblaze_0/libsrc/axidma_v9_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/axivdma_v6_6/src"
+make -C microblaze_0/libsrc/axivdma_v6_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/PmodACL2_v1_0/src"
+make -C microblaze_0/libsrc/PmodACL2_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/vtc_v8_0/src"
+make -C microblaze_0/libsrc/vtc_v8_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/axidma_v9_8/src"
+make -C microblaze_0/libsrc/axidma_v9_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axidma"
+"Running Make libs in microblaze_0/libsrc/axivdma_v6_6/src"
+make -C microblaze_0/libsrc/axivdma_v6_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axivdma"
+"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling iic"
+"Running Make libs in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/PmodACL2_v1_0/src"
+make -C microblaze_0/libsrc/PmodACL2_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling PmodACL2"
+"Running Make libs in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tmrctr"
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+"Running Make libs in microblaze_0/libsrc/vtc_v8_0/src"
+make -C microblaze_0/libsrc/vtc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling video timing controller"
+'Finished building libraries'
+10:16:00 **** Auto Build of configuration Debug for project drum_v5 ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+'Finished building: ../src/video_capture/video_capture.c'
+' '
+'Building file: ../src/userio/userio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/userio/userio.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/userio/userio.d" -MT"src/userio/userio.o" -o "src/userio/userio.o" "../src/userio/userio.c"
+'Finished building: ../src/userio/userio.c'
+' '
+'Building file: ../src/intc/intc.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+'Finished building: ../src/intc/intc.c'
+' '
+'Building file: ../src/iic/iic.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic/iic.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic/iic.d" -MT"src/iic/iic.o" -o "src/iic/iic.o" "../src/iic/iic.c"
+'Finished building: ../src/iic/iic.c'
+' '
+'Building file: ../src/dynclk/dynclk.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+'Finished building: ../src/dynclk/dynclk.c'
+' '
+'Building file: ../src/dma/dma.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma/dma.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dma/dma.d" -MT"src/dma/dma.o" -o "src/dma/dma.o" "../src/dma/dma.c"
+'Finished building: ../src/dma/dma.c'
+' '
+'Building file: ../src/display_ctrl/display_ctrl.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+'Finished building: ../src/display_ctrl/display_ctrl.c'
+' '
+'Building file: ../src/audio/audio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio/audio.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio/audio.d" -MT"src/audio/audio.o" -o "src/audio/audio.o" "../src/audio/audio.c"
+'Finished building: ../src/audio/audio.c'
+' '
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:926:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:998:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:864:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:863:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:862:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:854:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:853:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:853:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:852:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:852:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:852:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:851:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:851:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:851:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:849:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:849:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:849:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../drum_v5_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: drum_v5.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v5_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v5.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v5.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v5.elf  |tee "drum_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660432	   1936	18671120	19333488	1270170	drum_v5.elf
+'Finished building: drum_v5.elf.size'
+' '
+10:16:56 **** Build of project drum_v6_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/axidma_v9_8/src"
+make -C microblaze_0/libsrc/axidma_v9_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/axivdma_v6_6/src"
+make -C microblaze_0/libsrc/axivdma_v6_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/PmodACL2_v1_0/src"
+make -C microblaze_0/libsrc/PmodACL2_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/vtc_v8_0/src"
+make -C microblaze_0/libsrc/vtc_v8_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/axidma_v9_8/src"
+make -C microblaze_0/libsrc/axidma_v9_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axidma"
+mb-ar: creating ../../../lib/libxil.a
+"Running Make libs in microblaze_0/libsrc/axivdma_v6_6/src"
+make -C microblaze_0/libsrc/axivdma_v6_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axivdma"
+"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/iic_v3_5/src"
+make -C microblaze_0/libsrc/iic_v3_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling iic"
+"Running Make libs in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/PmodACL2_v1_0/src"
+make -C microblaze_0/libsrc/PmodACL2_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling PmodACL2"
+"Running Make libs in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src"
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tmrctr"
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+"Running Make libs in microblaze_0/libsrc/vtc_v8_0/src"
+make -C microblaze_0/libsrc/vtc_v8_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling video timing controller"
+'Finished building libraries'
+
+**** Build of configuration Debug for project drum_v6 ****
+
+Nothing to build for project drum_v6
+10:17:23 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+'Finished building: ../src/video_capture/video_capture.c'
+' '
+'Building file: ../src/userio/userio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/userio/userio.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/userio/userio.d" -MT"src/userio/userio.o" -o "src/userio/userio.o" "../src/userio/userio.c"
+'Finished building: ../src/userio/userio.c'
+' '
+'Building file: ../src/intc/intc.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+'Finished building: ../src/intc/intc.c'
+' '
+'Building file: ../src/iic/iic.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic/iic.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic/iic.d" -MT"src/iic/iic.o" -o "src/iic/iic.o" "../src/iic/iic.c"
+'Finished building: ../src/iic/iic.c'
+' '
+'Building file: ../src/dynclk/dynclk.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+'Finished building: ../src/dynclk/dynclk.c'
+' '
+'Building file: ../src/dma/dma.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma/dma.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dma/dma.d" -MT"src/dma/dma.o" -o "src/dma/dma.o" "../src/dma/dma.c"
+'Finished building: ../src/dma/dma.c'
+' '
+'Building file: ../src/display_ctrl/display_ctrl.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+'Finished building: ../src/display_ctrl/display_ctrl.c'
+' '
+'Building file: ../src/audio/audio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio/audio.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio/audio.d" -MT"src/audio/audio.o" -o "src/audio/audio.o" "../src/audio/audio.c"
+'Finished building: ../src/audio/audio.c'
+' '
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:955:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1027:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:893:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:892:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:891:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:883:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:882:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:882:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:881:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:881:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:881:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:880:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:880:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:880:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:878:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:878:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:878:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660772	   1936	18671124	19333832	12702c8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+10:20:01 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:21:33 **** Incremental Build of configuration Debug for project drum_v5 ****
+make all 
+make: Nothing to be done for 'all'.
+10:21:51 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:23:32 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:24:54 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:25:58 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:955:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1027:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:893:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:892:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:891:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:883:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:882:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:882:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:881:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:881:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:881:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:880:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:880:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:880:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:878:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:878:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:878:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659880	   1936	18671120	19332936	126ff48	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+10:26:36 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:28:47 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:30:26 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:956:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1028:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:894:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:893:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:892:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:884:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:883:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:883:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:882:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:882:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:882:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:881:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:881:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:881:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:879:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:879:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:879:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659448	   1936	18671120	19332504	126fd98	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+10:30:42 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:956:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1028:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:894:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:893:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:892:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:884:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:883:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:883:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:882:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:882:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:882:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:881:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:881:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:881:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:879:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:879:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:879:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659428	   1936	18671124	19332488	126fd88	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+10:31:24 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:31:54 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:32:42 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:45:40 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:46:11 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:54:25 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:55:43 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:956:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1028:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:894:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:893:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:892:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:884:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:883:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:883:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:882:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:882:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:882:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:881:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:881:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:881:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:879:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:879:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:879:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659500	   1936	18671124	19332560	126fdd0	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+10:56:07 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+10:56:43 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+11:36:41 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:956:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1028:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:894:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:893:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:892:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:884:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:883:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:883:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:882:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:882:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:882:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:881:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:881:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:881:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:879:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:879:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:879:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660016	   1936	18671120	19333072	126ffd0	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+11:44:54 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:957:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1029:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:895:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:894:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:893:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:885:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:884:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:884:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:883:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:883:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:883:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:882:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:882:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:882:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:880:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:880:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:880:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660036	   1936	18671124	19333096	126ffe8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+11:45:22 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'PrintXCoordHw':
+../src/demo.c:183:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+../src/demo.c:173:5: note: declared here
+ int PrintXCoordHw() {
+     ^~~~~~~~~~~~~
+../src/demo.c: In function 'main':
+../src/demo.c:234:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:232:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:231:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:226:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:225:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:224:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:222:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:221:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:219:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:218:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:957:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:1029:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:895:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:894:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:893:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:885:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:884:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:884:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:883:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:883:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:883:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:882:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:882:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:882:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:880:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:880:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:880:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660036	   1936	18671124	19333096	126ffe8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+11:45:33 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+11:46:39 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+12:07:33 **** Incremental Build of configuration Debug for project drum_v6 ****
+make all 
+make: Nothing to be done for 'all'.
+21:53:39 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:191:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:189:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:188:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:183:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c:182:8: warning: unused variable 'avg_acceleration1' [-Wunused-variable]
+  float avg_acceleration1 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:181:8: warning: unused variable 'avg_acceleration0' [-Wunused-variable]
+  float avg_acceleration0 = 0.0;
+        ^~~~~~~~~~~~~~~~~
+../src/demo.c:179:8: warning: unused variable 'y_data1' [-Wunused-variable]
+  float y_data1=0.0; //0x10(L)-0x11(H)
+        ^~~~~~~
+../src/demo.c:178:8: warning: unused variable 'x_data1' [-Wunused-variable]
+  float x_data1=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~~
+../src/demo.c:176:8: warning: unused variable 'y_data' [-Wunused-variable]
+  float y_data=0.0; //0x10(L)-0x11(H)
+        ^~~~~~
+../src/demo.c:175:8: warning: unused variable 'x_data' [-Wunused-variable]
+  float x_data=0.0; //0x0E(L)-0x0F(H)
+        ^~~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:914:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:986:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:852:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:851:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:850:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:842:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:841:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:841:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:840:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:840:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:840:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:839:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:839:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:839:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:837:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:837:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:837:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 660036	   1936	18671124	19333096	126ffe8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+21:54:07 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:185:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:183:5: warning: unused variable 'value' [-Wunused-variable]
+  u8 value = 0;
+     ^~~~~
+../src/demo.c:182:5: warning: unused variable 'statuReg' [-Wunused-variable]
+  u8 statuReg = 0x00;
+     ^~~~~~~~
+../src/demo.c:177:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:908:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:980:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:846:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:845:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:844:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:836:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:835:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:835:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:834:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:834:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:834:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:833:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:833:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:833:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:831:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:831:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:831:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659988	   1936	18671124	19333048	126ffb8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+21:58:37 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:899:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:971:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:837:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:836:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:835:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:827:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:826:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:826:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:825:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:825:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:825:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:824:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:824:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:824:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:822:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:822:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:822:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659972	   1936	18671124	19333032	126ffa8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+22:05:20 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:870:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:942:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:808:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:807:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:806:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:798:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:797:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:797:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:796:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:796:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:796:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:795:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:795:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:795:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:793:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:793:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:793:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659748	   1936	18671124	19332808	126fec8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+22:05:30 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:869:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:941:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:807:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:806:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:805:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:797:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:796:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:796:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:795:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:795:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:795:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:794:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:794:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:794:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:792:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:792:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:792:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659748	   1936	18671124	19332808	126fec8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+22:05:45 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:868:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:940:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:806:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:805:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:804:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:796:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:795:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:795:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:794:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:794:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:794:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:793:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:793:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:793:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:791:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:791:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:791:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659764	   1936	18671124	19332824	126fed8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+22:05:56 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:867:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:939:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:805:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:804:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:803:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:795:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:794:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:794:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:793:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:793:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:793:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:792:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:792:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:792:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:790:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:790:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:790:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659764	   1936	18671124	19332824	126fed8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+22:06:10 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:865:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:937:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:803:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:802:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:801:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:793:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:792:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:792:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:791:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:791:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:791:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:790:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:790:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:790:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:788:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:788:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:788:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659764	   1936	18671124	19332824	126fed8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '

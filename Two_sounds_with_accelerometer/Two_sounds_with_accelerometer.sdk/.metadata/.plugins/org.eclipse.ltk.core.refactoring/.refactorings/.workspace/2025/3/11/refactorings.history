@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;acl2_audio_v1/src/guitarA2_44k_16k.h&apos;" deleteContents="false" description="Delete resource &apos;acl2_audio_v1/src/guitarA2_44k_16k.h&apos;" element1="/acl2_audio_v1/src/guitarA2_44k_16k.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1741550135827"/>
+</session>

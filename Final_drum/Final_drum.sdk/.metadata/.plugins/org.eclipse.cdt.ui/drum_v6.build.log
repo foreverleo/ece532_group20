@@ -1,0 +1,80 @@
+22:06:10 **** Auto Build of configuration Debug for project drum_v6 ****
+make all 
+'Building file: ../src/demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/demo.o" -I../../drum_v6_bsp/microblaze_0/include -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/demo.d" -MT"src/demo.o" -o "src/demo.o" "../src/demo.c"
+../src/demo.c: In function 'main':
+../src/demo.c:182:6: warning: unused variable 'regXCoor' [-Wunused-variable]
+  u32 regXCoor = 0;
+      ^~~~~~~~
+../src/demo.c:175:15: warning: unused variable 'xCoor' [-Wunused-variable]
+  volatile int xCoor = 0;
+               ^~~~~
+../src/demo.c: In function 'DemoPrintTest':
+../src/demo.c:865:18: warning: unused variable 'distSq2' [-Wunused-variable]
+              int distSq2 = dx2*dx2 + dy2*dy2;
+                  ^~~~~~~
+../src/demo.c:937:18: warning: unused variable 'distSq1' [-Wunused-variable]
+              int distSq1 = dx1*dx1 + dy1*dy1;
+                  ^~~~~~~
+../src/demo.c:803:8: warning: unused variable 'greenVal' [-Wunused-variable]
+     u8 greenVal;
+        ^~~~~~~~
+../src/demo.c:802:8: warning: unused variable 'blueVal' [-Wunused-variable]
+     u8 blueVal = 0;
+        ^~~~~~~
+../src/demo.c:801:8: warning: unused variable 'redVal' [-Wunused-variable]
+     u8 redVal;
+        ^~~~~~
+../src/demo.c:793:15: warning: unused variable 'yInc' [-Wunused-variable]
+  double xInc, yInc;
+               ^~~~
+../src/demo.c:792:12: warning: unused variable 'yInt' [-Wunused-variable]
+  u32 yMid, yInt;
+            ^~~~
+../src/demo.c:792:6: warning: unused variable 'yMid' [-Wunused-variable]
+  u32 yMid, yInt;
+      ^~~~
+../src/demo.c:791:19: warning: unused variable 'xRight' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+                   ^~~~~~
+../src/demo.c:791:13: warning: unused variable 'xMid' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+             ^~~~
+../src/demo.c:791:6: warning: unused variable 'xLeft' [-Wunused-variable]
+  u32 xLeft, xMid, xRight, xInt;
+      ^~~~~
+../src/demo.c:790:22: warning: unused variable 'fGreen' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+                      ^~~~~~
+../src/demo.c:790:15: warning: unused variable 'fBlue' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+               ^~~~~
+../src/demo.c:790:9: warning: unused variable 'fRed' [-Wunused-variable]
+  double fRed, fBlue, fGreen, fColor;
+         ^~~~
+../src/demo.c:788:18: warning: unused variable 'wGreen' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+                  ^~~~~~
+../src/demo.c:788:11: warning: unused variable 'wBlue' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+           ^~~~~
+../src/demo.c:788:5: warning: unused variable 'wRed' [-Wunused-variable]
+  u8 wRed, wBlue, wGreen;
+     ^~~~
+'Finished building: ../src/demo.c'
+' '
+'Building target: drum_v6.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../drum_v6_bsp/microblaze_0/lib -mlittle-endian -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -Wl,--no-relax -Wl,--gc-sections -o "drum_v6.elf"  ./src/video_capture/video_capture.o  ./src/userio/userio.o  ./src/intc/intc.o  ./src/iic/iic.o  ./src/dynclk/dynclk.o  ./src/dma/dma.o  ./src/display_ctrl/display_ctrl.o  ./src/audio/audio.o  ./src/demo.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: drum_v6.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size drum_v6.elf  |tee "drum_v6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 659764	   1936	18671124	19332824	126fed8	drum_v6.elf
+'Finished building: drum_v6.elf.size'
+' '
+
+22:06:20 Build Finished (took 10s.457ms)
+

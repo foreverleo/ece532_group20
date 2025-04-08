@@ -1,0 +1,56 @@
+18:38:34 **** Build of project DMAaudio_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/axidma_v9_3/src"
+make -C microblaze_0/libsrc/axidma_v9_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: cannot stat `*.h': Invalid argument
+make[1]: *** [Makefile:24: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/axidma_v9_3/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/bram_v4_1/src"
+make -C microblaze_0/libsrc/bram_v4_1/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: cannot stat `*.h': Invalid argument
+make[1]: *** [Makefile:25: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/bram_v4_1/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/cpu_v2_5/src"
+make -C microblaze_0/libsrc/cpu_v2_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: cannot stat `xio.h': No such file or directory
+make[1]: *** [Makefile:24: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/cpu_v2_5/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: target `../../../include' is not a directory
+make[1]: *** [Makefile:25: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/gpio_v4_3/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/iic_v3_4/src"
+make -C microblaze_0/libsrc/iic_v3_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: target `../../../include' is not a directory
+make[1]: *** [Makefile:24: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/iic_v3_4/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/intc_v3_5/src"
+make -C microblaze_0/libsrc/intc_v3_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: cannot stat `*.h': Invalid argument
+make[1]: *** [Makefile:25: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/intc_v3_5/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/standalone_v6_1/src"
+make -C microblaze_0/libsrc/standalone_v6_1/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+Makefile:36: config.make: No such file or directory
+make[1]: *** No rule to make target 'config.make'.
+make[1]: Failed to remake makefile 'config.make'.
+cp: cannot stat `*.h': Invalid argument
+make[1]: *** [Makefile:70: standalone_includes] Error 1
+Makefile:38: ../config.make: No such file or directory
+make[2]: *** No rule to make target '../config.make'.
+make[2]: Failed to remake makefile '../config.make'.
+cp: target `../../../../include' is not a directory
+make[2]: *** [Makefile:75: include] Error 1
+make[1]: *** [Makefile:73: profile_includes] Error 2
+make[1]: Target 'include' not remade because of errors.
+make: *** [Makefile:24: microblaze_0/libsrc/standalone_v6_1/src/make.include] Error 2
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g"
+cp: cannot stat `*.h': Invalid argument
+make[1]: *** [Makefile:25: include] Error 1
+make: *** [Makefile:24: microblaze_0/libsrc/uartlite_v3_2/src/make.include] Error 2
+make: Target 'all' not remade because of errors.
+
+18:38:34 Build Finished (took 616ms)
+
