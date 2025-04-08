@@ -2,6 +2,8 @@
 
 ## Project Description
 The project entails moving two drum sticks wired to the Nexys board into certain spatial zones, analogous to hitting drum sticks onto drums, to produce a corresponding sound from the board. The SPI-based accelerometer attached to the front of the drum stick will take the hand movement velocity data to the board. If the velocity reading exceeds the set threshold then it’s considered as a hit. After a hit is detected, we use the image data read from the camera to determine the location of the hit. The visual output through HDMI will then indicate location and velocity data read. Then we generate drum sound accordingly and output it through the on-board audio output port.
+
+
 =======
 
 # Project Description
