@@ -5,6 +5,8 @@ The project entails moving two drum sticks (with one accelerometer attached to e
 
 An introduction and demo of the project can be found here: https://www.youtube.com/playlist?list=PL375u3xhh3XQRRNpfu7j61EfCjszAm4z5
 
+![App Demo](doc/Air Drums - Block Diagram Overview.png)
+
 ### Contributors
 Raymond Huynh\
 Leo Li\
